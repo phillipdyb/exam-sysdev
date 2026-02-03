@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <title>Systemutvikling Quiz</title>
+</head>
+<body>
+    <div class="container">
+        <h1>📚 Systemutvikling Quiz</h1>
+        
+        <div id="startScreen">
+            <div class="quiz-controls">
+                <button onclick="startQuiz('all')">Start alle 50 spørsmål</button>
+                <button onclick="startQuiz('random20')">Start 20 tilfeldige</button>
+                <button onclick="startQuiz('random10')">Start 10 tilfeldige</button>
+            </div>
+        </div>
+
+        <div id="quizScreen" class="hidden">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressBar">0%</div>
+            </div>
+
+            <div class="question-card">
+                <div class="question-number" id="questionNumber"></div>
+                <div class="question-text" id="questionText"></div>
+                <div class="options" id="optionsContainer"></div>
+                <div id="feedback" class="feedback hidden"></div>
+            </div>
+
+            <div class="navigation">
+                <button id="prevBtn" onclick="previousQuestion()" disabled>← Forrige</button>
+                <div class="nav-buttons">
+                    <button id="checkBtn" onclick="checkAnswer()">Sjekk svar</button>
+                    <button id="nextBtn" onclick="nextQuestion()" disabled>Neste →</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="resultsScreen" class="hidden">
+            <div class="results">
+                <div class="emoji" id="resultEmoji"></div>
+                <h2>Quiz fullført!</h2>
+                <div class="score" id="finalScore"></div>
+                <div class="score-details" id="scoreDetails"></div>
+                <button onclick="location.reload()">Start på nytt</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
