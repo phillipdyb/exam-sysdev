@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/style.css">
+  <title>Programvarearkitektur – Systemutvikling</title>
+  <script>!function(){var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);else if(window.matchMedia("(prefers-color-scheme: dark)").matches)document.documentElement.setAttribute("data-theme","dark")}();</script>
+</head>
+<body style="--accent: var(--c-arkitektur)">
+
+<header id="site-header"></header>
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <div class="breadcrumb">
+      <a href="/">Hjem</a>
+      <span class="breadcrumb-sep">/</span>
+      <a href="/teori/">Teori</a>
+      <span class="breadcrumb-sep">/</span>
+      <span>Arkitektur</span>
+    </div>
+    <div class="topic-tag">🏗️ Oppgave 2 på eksamen</div>
+    <h1>Programvarearkitektur</h1>
+    <p class="lead">Programvarearkitektur handler om de fundamentale valgene i et systems struktur – valg som er vanskelige å endre senere. Dekker arkitekturmønstre, design-prinsipper og Microservices.</p>
+  </div>
+</div>
+
+<div class="two-col">
+
+  <aside class="toc">
+    <p class="toc-title">Innhold</p>
+    <ul class="toc-list">
+      <li><a href="#hva-er">Hva er arkitektur?</a></li>
+      <li><a href="#prinsipper">Høy styrke & lave koblinger</a></li>
+      <li><a href="#modeller">Vanlige arkitekturmodeller</a></li>
+      <li><a href="#monolith-vs-micro">Monolitt vs. Microservices</a></li>
+      <li><a href="#microservices">Microservices i dybden</a></li>
+      <li><a href="#mvc">MVC-mønsteret</a></li>
+      <li><a href="#andre">Andre mønstre</a></li>
+    </ul>
+  </aside>
+
+  <article class="article">
+
+    <section id="hva-er">
+      <h2>Hva er programvarearkitektur?</h2>
+      <p>Programvarearkitektur handler om å zoome ut og se på den <strong>helhetlige strukturen</strong> til kodebasen. Det er de viktigste, overordnede valgene i et system – valg som er vanskelige å endre når systemet er i produksjon.</p>
+
+      <div class="callout callout-warning">
+        <strong>Arkitektur er dyrt å endre</strong>
+        Arkitekturvalg handler om fundamentale strukturer. Et feil arkitekturvalg tidlig kan kreve at store deler av koden skrives om. Ta disse valgene bevisst og tidlig.
+      </div>
+
+      <p>Eksempler på arkitekturmønstre: klient-tjener, tre-lags, MVC, Microservices, Event-bus, Pipe-filter.</p>
+    </section>
+
+    <section id="prinsipper">
+      <h2>Høy styrke & lave koblinger</h2>
+      <p>To av de viktigste prinsippene i programvaredesign og -arkitektur:</p>
+
+      <div class="term-grid">
+        <dl class="term-card">
+          <dt>Høy styrke (High Cohesion)</dt>
+          <dd>En komponent gjør én klart avgrenset ting og gjør den godt. Den har ett eller få ansvarsområder. Gjør komponenten enklere å forstå, endre, gjenbruke og bytte ut.</dd>
+        </dl>
+        <dl class="term-card">
+          <dt>Lave koblinger (Low Coupling)</dt>
+          <dd>En komponent har få avhengigheter til andre komponenter. Endringer i én komponent påvirker ikke resten. Gjør systemet lettere å teste og vedlikeholde.</dd>
+        </dl>
+      </div>
+
+      <h3>Hvorfor er dette viktig?</h3>
+      <ul>
+        <li><strong>Høy styrke</strong>: Klart hva komponenten gjør → enklere å forstå, endre og gjenbruke</li>
+        <li><strong>Lave koblinger</strong>: Endringer sprer seg ikke ukontrollert → tryggere å refaktorere</li>
+        <li>Sammen gir de oversiktlig, testbar og vedlikeholdbar kode</li>
+        <li>Mikroservices bruker begge prinsippene: én tjeneste, én oppgave, lite avhengigheter</li>
+      </ul>
+
+      <div class="callout callout-tip">
+        <strong>Huskeregel</strong>
+        Høy styrke = gjør én ting godt. Lave koblinger = vet minst mulig om omverdenen.
+      </div>
+    </section>
+
+    <section id="modeller">
+      <h2>Vanlige arkitekturmodeller</h2>
+
+      <h3>Standalone applikasjon</h3>
+      <p>All logikk og kode er samlet på én plass. F.eks. en offline mobilapp. Bra for enkle prosjekter – unngår unødvendig kompleksitet.</p>
+
+      <h3>Klient-tjener (Client-Server)</h3>
+      <p>Koden deles i to: (1) klienten som kjører i nettleseren/appen, og (2) serveren som håndterer datalagring, logikk og APIer. Skiller presentasjon fra logikk. Gir lavere kobling.</p>
+
+      <h3>Tre-lags arkitektur (3-Tier)</h3>
+      <p>En av de vanligste arkitekturene for webapplikasjoner:</p>
+      <ul>
+        <li><strong>Presentasjonslag</strong> – Håndterer UI og brukerinteraksjon</li>
+        <li><strong>Business Logic-lag</strong> – Styrer dataflyt og forretningslogikk</li>
+        <li><strong>Dataaksesslag</strong> – Fasiliterer tilgang til databaser og eksterne tjenester</li>
+      </ul>
+      <p>Hvert lag kommuniserer kun med laget over/under – høy styrke og lave koblinger.</p>
+    </section>
+
+    <section id="monolith-vs-micro">
+      <h2>Monolitt vs. Microservices</h2>
+      <table class="compare-table">
+        <thead>
+          <tr><th>Egenskap</th><th>Monolitt</th><th>Microservices</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Kodebase</td><td>Én stor kodebase</td><td>Mange små, selvstendige tjenester</td></tr>
+          <tr><td>Deployment</td><td>Deployes samlet</td><td>Hver tjeneste deployes uavhengig</td></tr>
+          <tr><td>Skalering</td><td>Hele systemet skaleres</td><td>Kun flaskehalsen skaleres</td></tr>
+          <tr><td>Testing</td><td>Enklere (alt er lokalt)</td><td>Vanskeligere (avhengigheter mellom tjenester)</td></tr>
+          <tr><td>Teknologi</td><td>Én tech-stack</td><td>Ulik stack per tjeneste</td></tr>
+          <tr><td>Debugging</td><td>Enklere å spore</td><td>Vanskeligere å finne feilen</td></tr>
+          <tr><td>Team</td><td>Alle jobber i samme kodebase</td><td>Hvert team eier sin tjeneste</td></tr>
+          <tr><td>Kompleksitet</td><td>Enklere dataflyt</td><td>Distribuert kompleksitet</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="microservices">
+      <h2>Microservices i dybden</h2>
+      <p>Microservices er en arkitekturstil der applikasjonen deles opp i <strong>mange små, selvstendige tjenester</strong>. Hver tjeneste:</p>
+      <ul>
+        <li>Gjør én avgrenset oppgave (høy styrke)</li>
+        <li>Kommuniserer via standardiserte protokoller (REST, gRPC, meldingskø)</li>
+        <li>Eier sine egne data (ingen delt database)</li>
+        <li>Kan deployes og skaleres uavhengig av de andre</li>
+      </ul>
+
+      <h3>Fordeler</h3>
+      <div class="pros-cons">
+        <div class="pros">
+          <h4>Fordeler</h4>
+          <ul>
+            <li>Skalerbarhet – kun flaskehalsen skaleres</li>
+            <li>Modularitet – uavhengige team per tjeneste</li>
+            <li>Teknologimangfold – ulike språk/rammeverk per tjeneste</li>
+            <li>Resiliency – resten kjører selv om én er nede</li>
+            <li>Enklere eksperimentering – bytt ut én tjeneste uten å påvirke resten</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>Ulemper</h4>
+          <ul>
+            <li>Vanskelig å identifisere hvilken tjeneste en feil stammer fra</li>
+            <li>Deployment-kompleksitet (Kubernetes, service mesh)</li>
+            <li>Datakonsistens på tvers av tjenester</li>
+            <li>Testing av flyt som spenner over tjenester</li>
+            <li>Kaotisk med parallelle versjoner av samme tjeneste</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>Konkret eksempel: Handelssystem</h3>
+      <p>Et handelssystem med separate tjenester: <strong>Order-service</strong>, <strong>Fee-service</strong>, <strong>Market-service</strong>, <strong>Account-service</strong>.</p>
+      <ul>
+        <li>Fee-tjenesten kan programmeres i et annet språk enn resten</li>
+        <li>Market-tjenesten kan oppdateres uten å påvirke Order-tjenesten</li>
+        <li>Hvis Fee-service er nede, kan resten av systemet fortsatt ta imot ordrer</li>
+        <li>Transaksjonsdatabasen eies eksklusivt av Account-service</li>
+      </ul>
+    </section>
+
+    <section id="mvc">
+      <h2>MVC-mønsteret</h2>
+      <p>MVC (Model-View-Controller) deler en interaktiv applikasjon i tre deler:</p>
+      <div class="term-grid">
+        <dl class="term-card">
+          <dt>Model</dt>
+          <dd>Inneholder all data som vises i applikasjonen, samt annen data som er viktig for prossessering. Forretningslogikk og tilstand.</dd>
+        </dl>
+        <dl class="term-card">
+          <dt>View</dt>
+          <dd>Viser frem modeller og data til brukeren gjennom et grafisk brukergrensesnitt. Kun presentasjon.</dd>
+        </dl>
+        <dl class="term-card">
+          <dt>Controller</dt>
+          <dd>Styrer informasjonsflyten. Tar input fra bruker, henter/sender data, og oppdaterer Model og View.</dd>
+        </dl>
+      </div>
+      <p>Brukt av Django, Ruby on Rails, Spring MVC og mange web-rammeverk. Gir høy styrke og lave koblinger.</p>
+    </section>
+
+    <section id="andre">
+      <h2>Andre arkitekturmønstre</h2>
+
+      <h3>Master-slave</h3>
+      <p>En «master» delegerer oppgaver til «slaves». Brukes i databasereplikering (master er sannhetskilden, slaves synkroniserer). Gir høyere kapasitet og mulighet for separat testing av deler.</p>
+
+      <h3>Pipe-filter</h3>
+      <p>Data strømmer gjennom en sekvens av filter-noder som prosesserer og transformerer dataene. Brukt i kompilatorer, bildeprosessering og e-postsending.</p>
+
+      <h3>Event-bus</h3>
+      <p>Komponenter publiserer meldinger til en sentral event-bus. Andre komponenter abonnerer på hendelser de er interessert i. Løs kobling mellom avsender og mottaker.</p>
+
+      <h3>Broker</h3>
+      <p>En mellommann (broker/API) håndterer kommunikasjon mellom tjenester som ikke kjenner hverandre. Gjør det mulig å bytte ut systemer uten at klienten merker det.</p>
+    </section>
+
+  </article>
+</div>
+
+<section class="quiz-cta">
+  <h2>Test arkitektur-kunnskapen din</h2>
+  <p>Øv på spørsmål om arkitekturmønstre, Microservices og design-prinsipper.</p>
+  <a href="/quiz/?topic=arkitektur" class="btn btn-primary">Start arkitektur-quiz →</a>
+</section>
+
+<div id="site-footer"></div>
+<script src="/nav.js"></script>
+</body>
+</html>

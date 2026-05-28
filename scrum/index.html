@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/style.css">
+  <title>Scrum – Systemutvikling</title>
+  <script>!function(){var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);else if(window.matchMedia("(prefers-color-scheme: dark)").matches)document.documentElement.setAttribute("data-theme","dark")}();</script>
+</head>
+<body style="--accent: var(--c-scrum)">
+
+<header id="site-header"></header>
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <div class="breadcrumb">
+      <a href="/">Hjem</a>
+      <span class="breadcrumb-sep">/</span>
+      <a href="/metodikk/">Metodikk</a>
+      <span class="breadcrumb-sep">/</span>
+      <span>Scrum</span>
+    </div>
+    <div class="topic-tag">🔄 Smidig metodikk</div>
+    <h1>Scrum</h1>
+    <p class="lead">Scrum er en smidig ramme for samarbeid, med faste sprinter, tydelige roller og seremonier som sikrer regelmessig leveranse og forbedring.</p>
+  </div>
+</div>
+
+<div class="two-col">
+
+  <aside class="toc">
+    <p class="toc-title">Innhold</p>
+    <ul class="toc-list">
+      <li><a href="#hva-er-scrum">Hva er Scrum?</a></li>
+      <li><a href="#roller">Roller</a></li>
+      <li><a href="#seremonier">Seremonier</a></li>
+      <li><a href="#artefakter">Artefakter</a></li>
+      <li><a href="#sprint-syklus">Sprint-syklusen</a></li>
+      <li><a href="#review-vs-retro">Review vs. Retrospective</a></li>
+    </ul>
+  </aside>
+
+  <article class="article">
+
+    <section id="hva-er-scrum">
+      <h2>Hva er Scrum?</h2>
+      <p>Scrum er en smidig metode som handler mer om <strong>hvordan man samarbeider</strong> innad i teamet og med kunder, enn om hvordan man skriver kode.</p>
+      <ul>
+        <li>Vanligst å være rundt 7–8 personer i et team</li>
+        <li>Arbeidet utføres i <strong>sprinter</strong> på 1–3 uker</li>
+        <li>Stand-up møter hver morgen (15 minutter)</li>
+        <li>Scrum-board oppdateres underveis i sprinten</li>
+      </ul>
+    </section>
+
+    <section id="roller">
+      <h2>Roller</h2>
+      <div class="term-grid">
+        <dl class="term-card">
+          <dt>Product Owner (PO)</dt>
+          <dd>Eier og prioriterer product backlog. Representerer kundens/forretningens interesser. Definerer hva teamet skal bygge og i hvilken rekkefølge.</dd>
+        </dl>
+        <dl class="term-card">
+          <dt>Scrum Master (SM)</dt>
+          <dd>Fasilitator og coach. Fjerner hindringer («impediments»). Sørger for at Scrum-prosessen følges. Skjermer teamet fra forstyrrelser utenfra.</dd>
+        </dl>
+        <dl class="term-card">
+          <dt>Development Team</dt>
+          <dd>Tverrfaglig team (5–9 pers) som designer, koder og tester. Selvorganiserende – bestemmer selv hvordan de løser oppgavene.</dd>
+        </dl>
+      </div>
+    </section>
+
+    <section id="seremonier">
+      <h2>Seremonier (møter)</h2>
+
+      <ol class="steps">
+        <li class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h4>Sprint Planning</h4>
+            <p><strong>Hvem:</strong> PO + Development Team<br>
+            <strong>Hva:</strong> Velger oppgaver fra product backlog til sprint backlog. Estimerer arbeidsmengde. Setter sprint-mål.</p>
+          </div>
+        </li>
+        <li class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h4>Daily Standup (Daily Scrum)</h4>
+            <p><strong>Hvem:</strong> Development Team (+ SM)<br>
+            <strong>Hva:</strong> 15 minutter. Tre spørsmål: Hva gjorde jeg i går? Hva gjør jeg i dag? Er det noe som hindrer meg?</p>
+          </div>
+        </li>
+        <li class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h4>Sprint Review</h4>
+            <p><strong>Hvem:</strong> Hele teamet + interessenter<br>
+            <strong>Hva:</strong> Demo av det ferdige inkrement for kunden. Innhenter tilbakemelding. Evaluerer leveransen.</p>
+          </div>
+        </li>
+        <li class="step">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <h4>Sprint Retrospective</h4>
+            <p><strong>Hvem:</strong> Kun Development Team + SM<br>
+            <strong>Hva:</strong> Teamet reflekterer over prosessen (ikke produktet). Hva gikk bra? Hva kan forbedres?</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section id="artefakter">
+      <h2>Artefakter</h2>
+      <div class="term-grid">
+        <dl class="term-card">
+          <dt>Product Backlog</dt>
+          <dd>Prioritert liste over alt som skal bygges. Eies av PO. Oppdateres kontinuerlig (backlog refinement).</dd>
+        </dl>
+        <dl class="term-card">
+          <dt>Sprint Backlog</dt>
+          <dd>Undersettet av product backlog som teamet tar inn i sprinten. Kan ikke endres midt i sprint (uten å avbryte sprinten).</dd>
+        </dl>
+        <dl class="term-card">
+          <dt>Inkrement</dt>
+          <dd>Det ferdige, potensielt leveringsdyktige produktet ved slutten av sprinten. Skal møte «Definition of Done».</dd>
+        </dl>
+      </div>
+    </section>
+
+    <section id="sprint-syklus">
+      <h2>Sprint-syklusen</h2>
+      <p>En sprint er typisk 1–3 uker og følger alltid samme mønster:</p>
+      <ol>
+        <li>Sprint Planning → definer sprint-mål og sprint backlog</li>
+        <li>Utvikling (med Daily Standup hver dag)</li>
+        <li>Sprint Review → demo og tilbakemelding</li>
+        <li>Sprint Retrospective → forbedre prosessen</li>
+        <li>Ny sprint starter</li>
+      </ol>
+
+      <div class="callout callout-tip">
+        <strong>Viktig</strong>
+        Krav og prioriteringer i product backlog kan oppdateres mellom sprinter. Men i pågående sprint er sprint backlog låst – teamet leverer det de planla.
+      </div>
+    </section>
+
+    <section id="review-vs-retro">
+      <h2>Sprint Review vs. Retrospective</h2>
+      <p>Dette er et vanlig eksamens-spørsmål:</p>
+      <table class="compare-table">
+        <thead>
+          <tr><th>Sprint Review</th><th>Sprint Retrospective</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Evaluerer <strong>leveransen/produktet</strong></td>
+            <td>Evaluerer <strong>prosessen og samarbeidet</strong></td>
+          </tr>
+          <tr>
+            <td>Involverer interessenter og kunder</td>
+            <td>Kun development team (+ SM)</td>
+          </tr>
+          <tr>
+            <td>Demo av ferdig inkrement</td>
+            <td>Refleksjon: hva gikk bra/dårlig?</td>
+          </tr>
+          <tr>
+            <td>Formål: få tilbakemelding på produktet</td>
+            <td>Formål: forbedre neste sprint</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+  </article>
+</div>
+
+<section class="quiz-cta">
+  <h2>Test Scrum-kunnskapen din</h2>
+  <p>Øv på spørsmål om Scrum-roller, seremonier og prosess.</p>
+  <a href="/quiz/?topic=metodikk" class="btn btn-primary">Start metodikk-quiz →</a>
+</section>
+
+<div id="site-footer"></div>
+<script src="/nav.js"></script>
+</body>
+</html>

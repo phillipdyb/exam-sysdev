@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/style.css">
+  <title>Quiz – Systemutvikling</title>
+  <script>!function(){var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);else if(window.matchMedia("(prefers-color-scheme: dark)").matches)document.documentElement.setAttribute("data-theme","dark")}();</script>
+</head>
+<body>
+
+<header id="site-header"></header>
+
+<main>
+  <div class="quiz-page">
+
+    <div class="quiz-header">
+      <h1>Quiz</h1>
+      <p>55 spørsmål basert på eksamensoppgaver fra IDATx1005 (2023). Velg tema og antall spørsmål.</p>
+    </div>
+
+    <!-- START SCREEN -->
+    <div id="startScreen">
+      <div class="quiz-topic-filters" id="topicFilters">
+        <button class="filter-btn active" data-topic="all">Alle (55)</button>
+        <button class="filter-btn" data-topic="mmi">MMI & IxD (11)</button>
+        <button class="filter-btn" data-topic="personvern">Personvern & Etikk (10)</button>
+        <button class="filter-btn" data-topic="metodikk">Metodikk (11)</button>
+        <button class="filter-btn" data-topic="testing">Testing (11)</button>
+        <button class="filter-btn" data-topic="arkitektur">Arkitektur (12)</button>
+      </div>
+
+      <div class="quiz-start-card">
+        <h2 id="startTitle">Alle spørsmål</h2>
+        <p id="startDesc">55 spørsmål fra alle temaer i IDATx1005.</p>
+        <div class="quiz-mode-btns" id="quizModeBtns">
+          <button class="btn btn-primary" onclick="startQuiz('all')">Alle spørsmål</button>
+          <button class="btn btn-ghost" onclick="startQuiz('random20')">20 tilfeldige</button>
+          <button class="btn btn-ghost" onclick="startQuiz('random10')">10 tilfeldige</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- QUIZ SCREEN -->
+    <div id="quizScreen" class="hidden">
+      <div class="progress-wrap">
+        <div class="progress-info">
+          <span id="progressLabel">Spørsmål 1 av 10</span>
+          <span id="scoreLabel">0 riktige</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" id="progressFill" style="width:0%"></div>
+        </div>
+      </div>
+
+      <div class="question-card">
+        <div class="question-number" id="questionNumber"></div>
+        <div class="question-text" id="questionText"></div>
+        <div class="options" id="optionsContainer"></div>
+        <div id="feedback" class="feedback hidden"></div>
+      </div>
+
+      <div class="quiz-nav">
+        <button class="btn btn-ghost btn-sm" id="prevBtn" onclick="previousQuestion()" disabled>← Forrige</button>
+        <div class="quiz-nav-right">
+          <button class="btn btn-primary btn-sm" id="checkBtn" onclick="checkAnswer()" disabled>Sjekk svar</button>
+          <button class="btn btn-ghost btn-sm" id="nextBtn" onclick="nextQuestion()" disabled>Neste →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- RESULTS SCREEN -->
+    <div id="resultsScreen" class="hidden">
+      <div class="results-card">
+        <span class="results-icon" id="resultIcon">🎉</span>
+        <div class="results-score" id="finalScore">0/0</div>
+        <div class="results-pct" id="resultsPct">0% riktig</div>
+        <button class="btn btn-primary" onclick="resetQuiz()">Ta quizen igjen</button>
+        &nbsp;
+        <a href="/" class="btn btn-ghost">Tilbake til forsiden</a>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<div id="site-footer"></div>
+
+<script src="/script.js"></script>
+<script src="/quiz/quiz.js"></script>
+<script src="/nav.js"></script>
+</body>
+</html>

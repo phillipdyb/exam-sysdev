@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/style.css">
+  <title>Teori-oversikt – Systemutvikling</title>
+  <script>!function(){var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);else if(window.matchMedia("(prefers-color-scheme: dark)").matches)document.documentElement.setAttribute("data-theme","dark")}();</script>
+</head>
+<body>
+
+<header id="site-header"></header>
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <div class="breadcrumb">
+      <a href="/">Hjem</a>
+      <span class="breadcrumb-sep">/</span>
+      <span>Teori</span>
+    </div>
+    <h1>Teori-oversikt</h1>
+    <p class="lead">En rask oppsummering av alle temaer i IDATx1005 Systemutvikling. Klikk på et tema for å gå i dybden.</p>
+  </div>
+</div>
+
+<main>
+  <section class="section">
+    <div class="section-inner">
+      <div class="teori-grid">
+
+        <!-- MMI -->
+        <div class="teori-card" style="--accent: var(--c-mmi)">
+          <div class="teori-card-header">
+            <span class="icon">👁️</span>
+            <h3>MMI & Interaksjonsdesign</h3>
+          </div>
+          <ul>
+            <li>Don Normans 6 prinsipper: Synlighet, Feedback, Begrensninger, Mapping, Konsistens, Tilbydelser</li>
+            <li>5 dimensjoner: Ord, Visuell representasjon, Fysiske objekter, Tid, Oppførsel</li>
+            <li>Interaksjonsdesignprosessen (4 trinn, iterativ)</li>
+            <li>Prototyper: horisontal/vertikal, evolusjonær/bruk-og-kast</li>
+            <li>Evaluering: brukertester, heuristisk, pluralistisk, prediktiv</li>
+            <li>Universell utforming – 7 prinsipper (Center for Universal Design)</li>
+            <li>WCAG – lovfestet i Norge</li>
+          </ul>
+          <a href="/mmi/" class="teori-card-link">Les mer om MMI →</a>
+        </div>
+
+        <!-- Metodikk -->
+        <div class="teori-card" style="--accent: var(--c-metodikk)">
+          <div class="teori-card-header">
+            <span class="icon">⚡</span>
+            <h3>Utviklingsmetodikk</h3>
+          </div>
+          <ul>
+            <li>Tradisjonell: Fossefalls-metoden (krav → design → kode → test)</li>
+            <li>Agile Manifesto – 4 verdier, 12 prinsipper</li>
+            <li>4 smidigprinsipper: Problem-based, Collaborative, Iterative, Adaptive</li>
+            <li>Scrum: roller, seremonier, sprinter (1–3 uker)</li>
+            <li>Kanban: flytbasert, WIP-grenser, Kanban-board</li>
+            <li>Lean: eliminate waste, deliver fast, build quality in</li>
+            <li>XP (Extreme Programming): TDD, parprogrammering, hyppige releaser</li>
+          </ul>
+          <a href="/metodikk/" class="teori-card-link">Les mer om metodikk →</a>
+        </div>
+
+        <!-- Arkitektur -->
+        <div class="teori-card" style="--accent: var(--c-arkitektur)">
+          <div class="teori-card-header">
+            <span class="icon">🏗️</span>
+            <h3>Programvarearkitektur</h3>
+          </div>
+          <ul>
+            <li>Høy styrke (High Cohesion) – én komponent gjør én ting godt</li>
+            <li>Lave koblinger (Low Coupling) – minimale avhengigheter mellom komponenter</li>
+            <li>Monolitt vs. Microservices</li>
+            <li>Klient-tjener arkitektur</li>
+            <li>Tre-lags arkitektur (Presentation, Business Logic, Data Access)</li>
+            <li>MVC-mønsteret (Model, View, Controller)</li>
+            <li>Event-bus, Pipe-filter, Broker, Master-slave</li>
+          </ul>
+          <a href="/arkitektur/" class="teori-card-link">Les mer om arkitektur →</a>
+        </div>
+
+        <!-- Testing -->
+        <div class="teori-card" style="--accent: var(--c-testing)">
+          <div class="teori-card-header">
+            <span class="icon">✅</span>
+            <h3>Testing</h3>
+          </div>
+          <ul>
+            <li>Testpyramiden: Unit → Integration → System (rask/billig → treg/kostbar)</li>
+            <li>Enhetstesting – isolerte komponenter, automatisert</li>
+            <li>Integrasjonstesting – samspill mellom komponenter</li>
+            <li>TDD: Red → Green → Refactor</li>
+            <li>BDD: Gherkin-språk, business-facing akseptansetester</li>
+            <li>Kontinuerlig integrasjon (CI) – automatisk testing ved pull request</li>
+            <li>Risk poker – prioritering av testinnsats</li>
+            <li>Ytelsestesting: stresstest, spike-test, lasttest</li>
+          </ul>
+          <a href="/testing/" class="teori-card-link">Les mer om testing →</a>
+        </div>
+
+        <!-- Etikk -->
+        <div class="teori-card" style="--accent: var(--c-etikk)">
+          <div class="teori-card-header">
+            <span class="icon">⚖️</span>
+            <h3>Etikk & Personvern</h3>
+          </div>
+          <ul>
+            <li>Profesjonsetikk – NITO-retningslinjer, samfunnsansvar</li>
+            <li>GDPR – 7 rettigheter (innsyn, retting, sletting, portabilitet…)</li>
+            <li>Unntak fra GDPR-rettigheter (juridiske forpliktelser, nasjonal sikkerhet)</li>
+            <li>Datatilsynets 7-stegs livssyklus for personvern</li>
+            <li>Privacy by design</li>
+            <li>Diskriminerings- og tilgjengelighetsloven §9 og §11</li>
+          </ul>
+          <a href="/etikk/" class="teori-card-link">Les mer om etikk →</a>
+        </div>
+
+        <!-- UML -->
+        <div class="teori-card" style="--accent: var(--c-uml)">
+          <div class="teori-card-header">
+            <span class="icon">📊</span>
+            <h3>UML-diagrammer</h3>
+          </div>
+          <ul>
+            <li>Use case-diagram – aktører, use cases, &laquo;include&raquo; og &laquo;extend&raquo;</li>
+            <li>Domenemodell – statisk bilde av konsepter og relasjoner</li>
+            <li>Sekvensdiagram – dynamisk interaksjon mellom klasser/aktører</li>
+            <li>Aktivitetsdiagram – arbeidsflyt med parallelle og betingede steg</li>
+            <li>Use case + domenemodell utfyller hverandre (dynamikk + struktur)</li>
+          </ul>
+          <a href="/uml/" class="teori-card-link">Les mer om UML →</a>
+        </div>
+
+        <!-- Scrum (sub-topic) -->
+        <div class="teori-card" style="--accent: var(--c-scrum)">
+          <div class="teori-card-header">
+            <span class="icon">🔄</span>
+            <h3>Scrum</h3>
+          </div>
+          <ul>
+            <li>Roller: Product Owner, Scrum Master, Development Team</li>
+            <li>Sprinter: 1–3 uker, fast tidsramme</li>
+            <li>Sprint Planning, Daily Standup (15 min), Sprint Review, Retrospective</li>
+            <li>Product Backlog → Sprint Backlog → Inkrement</li>
+            <li>Retrospektiv: teamet reflekterer over prosessen</li>
+          </ul>
+          <a href="/scrum/" class="teori-card-link">Les mer om Scrum →</a>
+        </div>
+
+        <!-- Kanban (sub-topic) -->
+        <div class="teori-card" style="--accent: var(--c-kanban)">
+          <div class="teori-card-header">
+            <span class="icon">📋</span>
+            <h3>Kanban</h3>
+          </div>
+          <ul>
+            <li>Flytbasert – ingen faste sprinter</li>
+            <li>Kanban-board med kolonner (To Do, In Progress, Done)</li>
+            <li>WIP-grenser – maks antall oppgaver per kolonne</li>
+            <li>Fjerne flaskehalser er målet</li>
+            <li>Kontinuerlig leveranse – releaser når noe er ferdig</li>
+          </ul>
+          <a href="/kanban/" class="teori-card-link">Les mer om Kanban →</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="quiz-cta">
+    <h2>Test kunnskapen din</h2>
+    <p>50 spørsmål fordelt på alle temaer. Start med alle eller velg et spesifikt tema.</p>
+    <a href="/quiz/" class="btn btn-primary">Gå til quiz →</a>
+  </section>
+</main>
+
+<div id="site-footer"></div>
+<script src="/nav.js"></script>
+</body>
+</html>

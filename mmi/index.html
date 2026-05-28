@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/style.css">
+  <title>MMI & Interaksjonsdesign – Systemutvikling</title>
+  <script>!function(){var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);else if(window.matchMedia("(prefers-color-scheme: dark)").matches)document.documentElement.setAttribute("data-theme","dark")}();</script>
+</head>
+<body style="--accent: var(--c-mmi)">
+
+<header id="site-header"></header>
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <div class="breadcrumb">
+      <a href="/">Hjem</a>
+      <span class="breadcrumb-sep">/</span>
+      <a href="/teori/">Teori</a>
+      <span class="breadcrumb-sep">/</span>
+      <span>MMI</span>
+    </div>
+    <div class="topic-tag">👁️ Oppgave 5 på eksamen</div>
+    <h1>MMI & Interaksjonsdesign</h1>
+    <p class="lead">Menneske-maskin interaksjon handler om hvordan applikasjoner designes slik at de blir intuitive og meningsfulle å bruke. Dekker designprinsipper, prosessen, prototyping og universell utforming.</p>
+  </div>
+</div>
+
+<div class="two-col">
+
+  <!-- TOC -->
+  <aside class="toc">
+    <p class="toc-title">Innhold</p>
+    <ul class="toc-list">
+      <li><a href="#hva-er-mmi">Hva er MMI?</a></li>
+      <li><a href="#don-norman">Don Normans 6 prinsipper</a></li>
+      <li><a href="#5-dimensjoner">5 dimensjoner i IxD</a></li>
+      <li><a href="#prosessen">Interaksjonsdesignprosessen</a></li>
+      <li><a href="#prototyping">Prototyping</a></li>
+      <li><a href="#evaluering">Evaluering</a></li>
+      <div class="toc-divider"></div>
+      <li><a href="#universell">Universell utforming</a></li>
+      <li><a href="#wcag">WCAG & lovverk</a></li>
+    </ul>
+  </aside>
+
+  <!-- Article -->
+  <article class="article">
+
+    <section id="hva-er-mmi">
+      <h2>Hva er MMI?</h2>
+      <p>Menneske-maskin interaksjon (MMI) – også kjent som Human-Computer Interaction (HCI) eller Interaction Design (IxD) – er temaet som omhandler hvordan applikasjoner struktureres slik at de blir intuitive for brukerne.</p>
+      <p>MMI dekker alt fra <strong>brukergrensesnittet (UI)</strong> – altså det brukeren ser og samhandler med (knapper, tekstfelter, toasts, modaler) – til <strong>brukeropplevelsen (UX)</strong>, som handler om den helhetlige opplevelsen av å bruke et produkt.</p>
+      <div class="callout">
+        <strong>Eksamensfokus</strong>
+        Oppgave 5 på eksamen (2023) handlet om interaksjonsdesignprosessens trinn og universell utforming. Kjenn disse godt.
+      </div>
+    </section>
+
+    <section id="don-norman">
+      <h2>Don Normans 6 designprinsipper</h2>
+      <p>Don Norman definerte seks fundamentale prinsipper som legger grunnlaget for godt grensesnittdesign. Disse brukes som et <em>felles språk for å beskrive og diskutere brukskvalitet</em> – ikke som en absolutt sjekkliste.</p>
+
+      <div class="term-grid">
+        <dl class="term-card">
+          <dt>1. Synlighet (Visibility)</dt>
+          <dd>Funksjoner og tilgjengelige handlinger skal fremgå tydelig av grensesnittet. Jo mer synlig en funksjon er, jo mer sannsynlig er det at brukeren vet at den finnes.</dd>
+        </dl>
+        <dl class="term-card">
+          <dt>2. Feedback</dt>
+          <dd>Systemet skal signalisere til brukeren hva som foregår. F.eks. en spinner ved lasting, eller en bekreftelsesmelding etter at et skjema er sendt.</dd>
+        </dl>
+        <dl class="term-card">
+          <dt>3. Begrensninger (Constraints)</dt>
+          <dd>Begrens hvilke handlinger brukeren kan gjøre for å forhindre feil. F.eks. grå ut knapper som ikke er tilgjengelige, eller valider input-felter.</dd>
+        </dl>
+        <dl class="term-card">
+          <dt>4. Mapping</dt>
+          <dd>Intuitiv sammenheng mellom kontroll og resultat. F.eks. at lysstyrke-slider beveger seg i samme retning som lyset øker/minker.</dd>
+        </dl>
+        <dl class="term-card">
+          <dt>5. Konsistens (Consistency)</dt>
+          <dd>Like ting gjøres likt overalt i applikasjonen. Brukeren lærer mønsteret én gang og kan anvende det overalt. Sparer kognitiv belastning.</dd>
+        </dl>
+        <dl class="term-card">
+          <dt>6. Tilbydelser (Affordances)</dt>
+          <dd>En komponents utseende indikerer hvilke handlinger som er mulige. En knapp ser klikkbar ut. En tekstboks ser redigerbar ut. Brukeren forstår intuitivt hva de kan gjøre.</dd>
+        </dl>
+      </div>
+
+      <div class="callout callout-warning">
+        <strong>Viktig</strong>
+        Prinsippene er ikke en sjekkliste – de kan brukes til å <em>diskutere</em> brukskvalitet. F.eks. kan synlighet både være bra og dårlig: for mye info gjør grensesnittet overveldende.
+      </div>
+    </section>
+
+    <section id="5-dimensjoner">
+      <h2>De 5 dimensjonene i interaksjonsdesign</h2>
+      <p>De fem dimensjonene beskriver de ulike mediene/kanalene man bruker for å kommunisere med brukeren i et interaktivt system:</p>
+
+      <ol class="steps">
+        <li class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h4>Ord</h4>
+            <p>Tekst, etiketter og instruksjoner. Bør være klare, konsise og forståelige for målgruppen.</p>
+          </div>
+        </li>
+        <li class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h4>Visuell representasjon</h4>
+            <p>Grafiske elementer – ikoner, bilder, farger, fonter og størrelseforhold.</p>
+          </div>
+        </li>
+        <li class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h4>Fysiske objekter og rom</h4>
+            <p>Det brukeren bruker fysisk: tastatur, mus, touch-skjerm, eller rommet de befinner seg i.</p>
+          </div>
+        </li>
+        <li class="step">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <h4>Tid</h4>
+            <p>Varigheten brukeren interagerer med de tre første dimensjonene: animasjoner, feedback-forsinkelse, loading-tid.</p>
+          </div>
+        </li>
+        <li class="step">
+          <div class="step-num">5</div>
+          <div class="step-content">
+            <h4>Oppførsel (Behaviour)</h4>
+            <p>Følelsene og reaksjonene brukerne får når de samhandler med produktet. Den helhetlige opplevelsen.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section id="prosessen">
+      <h2>Interaksjonsdesignprosessen</h2>
+      <p>Interaksjonsdesign er en <strong>iterativ prosess</strong> – de fire trinnene gjentas til man er fornøyd med resultatet.</p>
+
+      <ol class="steps">
+        <li class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h4>Definere krav</h4>
+            <p>Hva skal lages? Hvem er brukerne? Hva trenger de? Bruk personas, scenarioer og use cases.</p>
+          </div>
+        </li>
+        <li class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h4>Designe alternativer</h4>
+            <p>Lag skisser og wireframes. Utforsk ulike løsninger. Tenk på informasjonsarkitektur og navigasjon.</p>
+          </div>
+        </li>
+        <li class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h4>Lage prototyper</h4>
+            <p>Bygg en representasjon av løsningen – fra papirskisser til interaktive hi-fi prototyper i Figma.</p>
+          </div>
+        </li>
+        <li class="step">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <h4>Evaluering</h4>
+            <p>Test prototypen med brukere eller eksperter. Samle tilbakemelding og gå tilbake til steg 1.</p>
+          </div>
+        </li>
+      </ol>
+
+      <div class="callout callout-tip">
+        <strong>Iterativ prosess</strong>
+        Disse trinnene er ikke lineære – man hopper frem og tilbake mellom dem basert på hva evalueringen avslører. Det er dette som skiller IxD fra tradisjonell fossefalls-utvikling.
+      </div>
+    </section>
+
+    <section id="prototyping">
+      <h2>Prototyping</h2>
+      <p>Prototyper gir et inntrykk av det ferdige produktet uten å implementere det fullt ut. Nyttig for å teste ideer, få tilbakemelding og skape felles forståelse.</p>
+
+      <h3>Horisontal vs. vertikal prototype</h3>
+      <table class="compare-table">
+        <thead>
+          <tr><th>Type</th><th>Beskrivelse</th><th>Brukes til</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Horisontal</strong></td>
+            <td>Dekker mange funksjoner, men lite dybde per funksjon</td>
+            <td>Teste navigasjon og overordnet flyt</td>
+          </tr>
+          <tr>
+            <td><strong>Vertikal</strong></td>
+            <td>Detaljert versjon av én spesifikk funksjon</td>
+            <td>Teste en enkelt arbeidsflyt i dybden</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Evolusjonær vs. bruk-og-kast prototype</h3>
+      <div class="pros-cons">
+        <div class="pros">
+          <h4>Evolusjonær prototype</h4>
+          <ul>
+            <li>Videreutvikles til å bli det ferdige produktet</li>
+            <li>Sparer arbeid – ingen re-implementering</li>
+            <li>Risiko: teknisk gjeld hvis prototypevalg ikke er optimale</li>
+          </ul>
+        </div>
+        <div class="cons" style="background: #eff6ff; border-color: #bfdbfe;">
+          <h4 style="color: #1d4ed8;">Bruk-og-kast prototype</h4>
+          <ul style="">
+            <li style="color: #1d4ed8;">Bygges bare for å teste – kastes etterpå</li>
+            <li style="color: #1d4ed8;">Gir frihet til å eksperimentere</li>
+            <li style="color: #1d4ed8;">Definerer hva som fungerte/ikke fungerte for neste runde</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="evaluering">
+      <h2>Evaluering</h2>
+      <p>Evaluering er prosessen med å sette en verdi på de ulike aspektene av designet for å bestemme hva som er overflødig og hva som bør forbedres.</p>
+
+      <h3>Brukerbaserte evalueringer</h3>
+      <ul>
+        <li><strong>Brukertester</strong> – La en bruker ta produktet i bruk og observer</li>
+        <li><strong>A/B-tester</strong> – Eksponer brukere mot to varianter, se hvilken som presterer best</li>
+        <li><strong>Feltstudier</strong> – Observer brukeren i naturlige omgivelser</li>
+        <li><strong>Opportunistiske evalueringer</strong> – Be en bruker gi tilbakemelding på en konkret idé</li>
+      </ul>
+
+      <h3>Andre evalueringsmetoder</h3>
+      <ul>
+        <li><strong>Heuristiske gjennomganger</strong> – Evaluer mot velkjente regler (f.eks. Nielsens 10 heuristikker)</li>
+        <li><strong>Pluralistiske gjennomganger</strong> – Brukere, utviklere og eksperter jobber gjennom scenarioer</li>
+        <li><strong>Prediktive modeller</strong> – Maskinlæringsmodeller som forutsier brukeropplevelse</li>
+      </ul>
+    </section>
+
+    <section id="universell">
+      <h2>Universell utforming</h2>
+      <p>Universell utforming (Universal Design) handler om å lage produkter slik at de kan brukes av <strong>flest mulig, uavhengig av alder, evner eller funksjonsnedsettelser</strong> – uten behov for spesialtilpasninger eller separate løsninger.</p>
+
+      <div class="callout callout-important">
+        <strong>Lovpålagt i Norge</strong>
+        Diskriminerings- og tilgjengelighetsloven §9 og §11 krever universell utforming av IKT-løsninger. WCAG er lovfestet å følge for alle offentlige og private virksomheter.
+      </div>
+
+      <h3>Center for Universal Design – 7 prinsipper</h3>
+      <div class="term-grid">
+        <dl class="term-card">
+          <dt>1. Like muligheter for alle</dt>
+          <dd>Utformingen skal være brukbar og tilgjengelig for personer med ulike ferdigheter.</dd>
+        </dl>
+        <dl class="term-card">
+          <dt>2. Fleksibel i bruk</dt>
+          <dd>Uansett individuelle preferanser og ferdigheter. Den synshemmede skal kunne høre, den hørselhemmede se.</dd>
+        </dl>
+        <dl class="term-card">
+          <dt>3. Enkel og intuitiv i bruk</dt>
+          <dd>Utformingen skal være lett å forstå uansett brukerens erfaring, kunnskap eller konsentrasjonsnivå.</dd>
+        </dl>
+        <dl class="term-card">
+          <dt>4. Forståelig informasjon</dt>
+          <dd>Nødvendig informasjon kommuniseres effektivt, uavhengig av sansemessige forhold.</dd>
+        </dl>
+        <dl class="term-card">
+          <dt>5. Toleranse for feil</dt>
+          <dd>Utformingen minimerer farer og ugunstige konsekvenser av utilsiktede handlinger.</dd>
+        </dl>
+        <dl class="term-card">
+          <dt>6. Lav fysisk anstrengelse</dt>
+          <dd>Utformingen kan brukes effektivt og bekvemt med minimum besvær.</dd>
+        </dl>
+        <dl class="term-card">
+          <dt>7. Størrelse og plass for tilgang og bruk</dt>
+          <dd>Hensiktsmessig størrelse og plass for tilgang, rekkevidde og betjening, uavhengig av kropp og mobilitet.</dd>
+        </dl>
+      </div>
+    </section>
+
+    <section id="wcag">
+      <h2>WCAG & lovverk</h2>
+      <p><strong>WCAG</strong> (Web Content Accessibility Guidelines) er internasjonale retningslinjer for tilgjengelig webinnhold, utviklet av W3C.</p>
+
+      <h3>WCAG i Norge</h3>
+      <ul>
+        <li>Lovfestet å følge av <strong>alle offentlige og private virksomheter</strong></li>
+        <li>35 av 61 suksesskriterier i WCAG 2.0 er obligatoriske</li>
+        <li>Regulert via diskriminerings- og tilgjengelighetsloven</li>
+        <li>Tilsynet for universell utforming av IKT håndhever</li>
+      </ul>
+
+      <h3>Argumenter for universell utforming</h3>
+      <ul>
+        <li>Lovpålagt (juridisk risiko ved brudd)</li>
+        <li>Mer inkluderende – bedre for alle brukere, ikke bare de med funksjonsnedsettelser</li>
+        <li>Bedre mobilopplevelse (mange UU-prinsipper sammenfaller med mobile best practices)</li>
+        <li>Bedre søkemotoroptimalisering (alt-tekst, semantisk HTML)</li>
+        <li>Større markedsandel – ca. 15% av befolkningen har en form for funksjonsnedsettelse</li>
+      </ul>
+    </section>
+
+  </article>
+</div>
+
+<section class="quiz-cta">
+  <h2>Test MMI-kunnskapen din</h2>
+  <p>Øv på spørsmål om interaksjonsdesign og universell utforming.</p>
+  <a href="/quiz/?topic=mmi" class="btn btn-primary">Start MMI-quiz →</a>
+</section>
+
+<div id="site-footer"></div>
+<script src="/nav.js"></script>
+</body>
+</html>

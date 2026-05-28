@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/style.css">
+  <title>UML-diagrammer – Systemutvikling</title>
+  <script>!function(){var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);else if(window.matchMedia("(prefers-color-scheme: dark)").matches)document.documentElement.setAttribute("data-theme","dark")}();</script>
+</head>
+<body style="--accent: var(--c-uml)">
+
+<header id="site-header"></header>
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <div class="breadcrumb">
+      <a href="/">Hjem</a>
+      <span class="breadcrumb-sep">/</span>
+      <a href="/teori/">Teori</a>
+      <span class="breadcrumb-sep">/</span>
+      <span>UML</span>
+    </div>
+    <div class="topic-tag">📊 Modellering & design</div>
+    <h1>UML-diagrammer</h1>
+    <p class="lead">UML (Unified Modeling Language) er et standardisert visuelt språk for å modellere programvaresystemer. Dekker de viktigste diagramtypene brukt i IDATx1005.</p>
+  </div>
+</div>
+
+<div class="two-col">
+
+  <aside class="toc">
+    <p class="toc-title">Innhold</p>
+    <ul class="toc-list">
+      <li><a href="#hva-er-uml">Hva er UML?</a></li>
+      <li><a href="#use-case">Use case-diagram</a></li>
+      <li><a href="#domenemodell">Domenemodell</a></li>
+      <li><a href="#sekvens">Sekvensdiagram</a></li>
+      <li><a href="#aktivitet">Aktivitetsdiagram</a></li>
+      <li><a href="#use-case-vs-domene">Use case vs. domenemodell</a></li>
+    </ul>
+  </aside>
+
+  <article class="article">
+
+    <section id="hva-er-uml">
+      <h2>Hva er UML?</h2>
+      <p>UML er et visuelt modell-språk for å beskrive, spesifisere og dokumentere programvaresystemer. Det finnes mange typer UML-diagrammer – i IDATx1005 fokuserer vi på fire:</p>
+      <ul>
+        <li><strong>Use case-diagram</strong> – hvem gjør hva med systemet</li>
+        <li><strong>Domenemodell</strong> – statisk struktur av konsepter og relasjoner</li>
+        <li><strong>Sekvensdiagram</strong> – dynamisk flyt mellom klasser/aktører</li>
+        <li><strong>Aktivitetsdiagram</strong> – arbeidsflyt og beslutningspunkter</li>
+      </ul>
+    </section>
+
+    <section id="use-case">
+      <h2>Use case-diagram</h2>
+      <p>Use case-diagrammer brukes for å illustrere <strong>hvem som gjør hva</strong> med et system. Viser relasjonene mellom aktører og bruksscenarioer.</p>
+
+      <h3>Elementer</h3>
+      <div class="term-grid">
+        <dl class="term-card">
+          <dt>Aktør</dt>
+          <dd>En person eller ekstern entitet som bruker systemet. Tegnes som en strekfigur. Kan være bruker, admin, eksternt system.</dd>
+        </dl>
+        <dl class="term-card">
+          <dt>Use case</dt>
+          <dd>En funksjon eller tjeneste systemet tilbyr. Tegnes som en oval. Navngis med verb + substantiv (f.eks. «Logg inn», «Send ordre»).</dd>
+        </dl>
+        <dl class="term-card">
+          <dt>&laquo;include&raquo;</dt>
+          <dd>En use case inkluderer alltid en annen. Obligatorisk avhengighet. F.eks. «Betale» inkluderer alltid «Autentisere».</dd>
+        </dl>
+        <dl class="term-card">
+          <dt>&laquo;extend&raquo;</dt>
+          <dd>En use case kan (men trenger ikke) utvideles av en annen. Valgfri avhengighet. F.eks. «Laste opp dokument» kan utvide med «Administrere mapper».</dd>
+        </dl>
+      </div>
+
+      <div class="callout callout-tip">
+        <strong>include vs. extend</strong>
+        include = alltid obligatorisk. extend = valgfri utvidelse. Huskeregel: «include» er som et funksjonskall – det skjer alltid. «extend» er som en valgfri plugin.
+      </div>
+    </section>
+
+    <section id="domenemodell">
+      <h2>Domenemodell</h2>
+      <p>En domenemodell beskriver <strong>data og funksjonalitet innenfor et domene</strong>. Enkelt forklart: man definerer en rekke konsepter innenfor et domene, og relasjonene mellom dem.</p>
+
+      <h3>Elementer</h3>
+      <ul>
+        <li><strong>Klasser</strong> – konsepter/entiteter (f.eks. «Skole», «Student», «Instruktør»)</li>
+        <li><strong>Attributter</strong> – egenskaper til klassen (f.eks. «navn», «studentId»)</li>
+        <li><strong>Assosiasjoner</strong> – relasjoner mellom klasser (f.eks. «Student enrolledAt Skole»)</li>
+        <li><strong>Multiplisitet</strong> – antall (f.eks. «1..*» = én eller flere)</li>
+        <li><strong>Arv</strong> – subklasse arver fra superklasse (f.eks. «Universitet» er en «Skole»)</li>
+      </ul>
+
+      <p>Domenemodellen er <strong>statisk</strong> – den viser strukturen, ikke hva som skjer over tid.</p>
+    </section>
+
+    <section id="sekvens">
+      <h2>Sekvensdiagram</h2>
+      <p>Et sekvensdiagram viser <strong>hvordan klasser/aktører samhandler over tid</strong>. Klasser vises som vertikale linjer, og meldinger (kall) vises som horisontale piler mellom dem.</p>
+
+      <h3>Elementer</h3>
+      <ul>
+        <li><strong>Livslinje</strong> – vertikal stiplet linje for hver deltaker</li>
+        <li><strong>Aktiveringsblokk</strong> – rektangel på livslinjen når aktøren er aktiv</li>
+        <li><strong>Synkront kall</strong> – solid pil (venter på svar)</li>
+        <li><strong>Returmelding</strong> – stiplet pil tilbake</li>
+        <li><strong>loop</strong> – repetisjonsboks for gjentatte meldinger</li>
+      </ul>
+
+      <div class="callout">
+        <strong>Ikke bare klasser</strong>
+        De vertikale linjene trenger ikke representere klasser – de kan representere lag, nivåer, aktører eller andre systemkomponenter.
+      </div>
+    </section>
+
+    <section id="aktivitet">
+      <h2>Aktivitetsdiagram</h2>
+      <p>Et aktivitetsdiagram gir et <strong>grafisk bilde av en arbeidsflyt</strong>. Det beskriver aktiviteter, beslutningspunkter og parallelle flyter.</p>
+
+      <h3>Elementer</h3>
+      <ul>
+        <li><strong>Startnode</strong> – fyllt sirkel (●) – startpunkt</li>
+        <li><strong>Aktivitet</strong> – avrundet rektangel med handlingsnavn</li>
+        <li><strong>Beslutningsnode</strong> – diamant med [ja]/[nei]-grener</li>
+        <li><strong>Fork/Join</strong> – tykk horisontalt linje for parallelle aktiviteter</li>
+        <li><strong>Sluttnode</strong> – sirkel med prikk inni (◎) – sluttpunkt</li>
+      </ul>
+
+      <p>Nyttig for å studere rutiner og arbeidsmetoder, samt se hvilke aktiviteter som kan utføres parallelt.</p>
+    </section>
+
+    <section id="use-case-vs-domene">
+      <h2>Use case vs. domenemodell</h2>
+      <p>Disse to diagramtypene utfyller hverandre:</p>
+      <table class="compare-table">
+        <thead>
+          <tr><th>Use case-diagram</th><th>Domenemodell</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Dynamisk – hvem gjør hva</td><td>Statisk – hva systemet vet om</td></tr>
+          <tr><td>Funksjonelle krav</td><td>Strukturelle konsepter</td></tr>
+          <tr><td>Aktør + brukscenario</td><td>Klasse + attributter + relasjoner</td></tr>
+          <tr><td>«Hva kan brukeren gjøre?»</td><td>«Hvilke data håndterer systemet?»</td></tr>
+        </tbody>
+      </table>
+      <p>Til sammen gir de <strong>dynamikk + struktur</strong> – et fullstendig bilde av systemet.</p>
+    </section>
+
+  </article>
+</div>
+
+<section class="quiz-cta">
+  <h2>Test UML-kunnskapen din</h2>
+  <p>Øv på spørsmål om modellering og UML-diagrammer.</p>
+  <a href="/quiz/" class="btn btn-primary">Gå til quiz →</a>
+</section>
+
+<div id="site-footer"></div>
+<script src="/nav.js"></script>
+</body>
+</html>

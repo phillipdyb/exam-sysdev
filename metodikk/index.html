@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/style.css">
+  <title>Utviklingsmetodikk – Systemutvikling</title>
+  <script>!function(){var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);else if(window.matchMedia("(prefers-color-scheme: dark)").matches)document.documentElement.setAttribute("data-theme","dark")}();</script>
+</head>
+<body style="--accent: var(--c-metodikk)">
+
+<header id="site-header"></header>
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <div class="breadcrumb">
+      <a href="/">Hjem</a>
+      <span class="breadcrumb-sep">/</span>
+      <a href="/teori/">Teori</a>
+      <span class="breadcrumb-sep">/</span>
+      <span>Metodikk</span>
+    </div>
+    <div class="topic-tag">⚡ Oppgave 1 på eksamen</div>
+    <h1>Utviklingsmetodikk</h1>
+    <p class="lead">Oversikt over tradisjonelle og smidige utviklingsmetoder – fra fossefalls til Agile Manifesto, Scrum, Kanban og Lean.</p>
+  </div>
+</div>
+
+<div class="two-col">
+
+  <aside class="toc">
+    <p class="toc-title">Innhold</p>
+    <ul class="toc-list">
+      <li><a href="#tradisjonell">Tradisjonelle metoder</a></li>
+      <li><a href="#agile">Agile Manifesto</a></li>
+      <li><a href="#smidig-prinsipper">4 smidige prinsipper</a></li>
+      <li><a href="#scrum">Scrum</a></li>
+      <li><a href="#kanban">Kanban</a></li>
+      <li><a href="#scrum-vs-kanban">Scrum vs. Kanban</a></li>
+      <li><a href="#lean">Lean</a></li>
+      <li><a href="#xp">XP</a></li>
+      <div class="toc-divider"></div>
+      <li><a href="/scrum/">Scrum – dybde →</a></li>
+      <li><a href="/kanban/">Kanban – dybde →</a></li>
+    </ul>
+  </aside>
+
+  <article class="article">
+
+    <section id="tradisjonell">
+      <h2>Tradisjonelle metoder</h2>
+
+      <h3>Fossefalls-metoden</h3>
+      <p>Fossefalls-metoden (Waterfall) var standarden frem til ca. 2000-tallet. Den er lineær og sekvensielle – hver fase fullføres før neste starter.</p>
+      <ol class="steps">
+        <li class="step"><div class="step-num">1</div><div class="step-content"><h4>Kravspesifikasjon</h4><p>Alle krav defineres fullstendig</p></div></li>
+        <li class="step"><div class="step-num">2</div><div class="step-content"><h4>Design</h4><p>Systemarkitektur og detaljdesign</p></div></li>
+        <li class="step"><div class="step-num">3</div><div class="step-content"><h4>Implementasjon</h4><p>Koden skrives</p></div></li>
+        <li class="step"><div class="step-num">4</div><div class="step-content"><h4>Testing</h4><p>Systemet testes</p></div></li>
+        <li class="step"><div class="step-num">5</div><div class="step-content"><h4>Vedlikehold</h4><p>Drift og videreutvikling</p></div></li>
+      </ol>
+
+      <div class="callout callout-warning">
+        <strong>Problem med Waterfall</strong>
+        Endringer underveis er svært kostbare. Krav er nesten aldri stabile nok til å defineres fullstendig på forhånd. Hvert steg krever omfattende dokumentasjon til neste team.
+      </div>
+
+      <h3>Unified Process (UP)</h3>
+      <p>UP var et forsøk på å forbedre fossefalls ved å innføre iterasjoner, men beholdt den tunge dokumentasjonskulturen. UML-diagrammer stod sentralt.</p>
+    </section>
+
+    <section id="agile">
+      <h2>Agile Manifesto</h2>
+      <p>Smidig utvikling oppstod på 90-tallet og ble merkverdig i 2001 da The Agile Manifesto ble utgitt. Manifestet sier:</p>
+
+      <div class="term-grid">
+        <dl class="term-card">
+          <dt>Individer og interaksjoner</dt>
+          <dd>... fremfor prosesser og verktøy. Menneskene er viktigere enn verktøyene de bruker.</dd>
+        </dl>
+        <dl class="term-card">
+          <dt>Fungerende programvare</dt>
+          <dd>... fremfor omfattende dokumentasjon. Leveransen er det som teller.</dd>
+        </dl>
+        <dl class="term-card">
+          <dt>Kundesamarbeid</dt>
+          <dd>... fremfor kontraktsforhandlinger. Bygg tillit gjennom tett samarbeid med kunden.</dd>
+        </dl>
+        <dl class="term-card">
+          <dt>Reagere på endring</dt>
+          <dd>... fremfor å følge en plan. Evnen til å tilpasse seg er mer verdifullt enn å følge en rigid plan.</dd>
+        </dl>
+      </div>
+
+      <div class="callout callout-tip">
+        <strong>Husk</strong>
+        Det som står til venstre verdsettes, men det til høyre har også verdi. Det er ikke "prosesser er ubrukelige" – men at individer er viktigere.
+      </div>
+    </section>
+
+    <section id="smidig-prinsipper">
+      <h2>De 4 grunnleggende smidige prinsippene</h2>
+      <p>Utover Agile Manifesto finnes det 4 nøkkelprinsipper som kjennetegner smidig utvikling:</p>
+
+      <ol class="steps">
+        <li class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h4>Problem-based</h4>
+            <p>Store problemer brytes ned i mindre, prioriterte deler. Avhengig av utgangspunkt er det ulike veier til løsningen.</p>
+          </div>
+        </li>
+        <li class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h4>Collaborative</h4>
+            <p>Flere roller er involvert fra begynnelsen: PO, SM, Teknisk spesifikasjon, Implementering, Testing, Distribusjon. Brukere kan starte prosessen.</p>
+          </div>
+        </li>
+        <li class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h4>Iterative</h4>
+            <p>Korte iterasjoner med rask feedback. Du planlegger smått, beveger deg fremover og tilbake. "Think big, act small."</p>
+          </div>
+        </li>
+        <li class="step">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <h4>Adaptive progress</h4>
+            <p>Fremgangen er adaptiv og ikke-lineær. Du får raskere tilbakemelding, og deretter tilpasser du deg. Fail fast, learn rapidly.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section id="scrum">
+      <h2>Scrum (oversikt)</h2>
+      <p>Scrum er en smidig metode som strukturerer arbeidet i <strong>faste tidsavgrensede iterasjoner (sprinter)</strong> med definerte roller og seremonier.</p>
+
+      <h3>Roller</h3>
+      <ul>
+        <li><strong>Product Owner (PO)</strong> – Eier produktbacklog, prioriterer oppgaver, representerer kunden</li>
+        <li><strong>Scrum Master (SM)</strong> – Fasilitator, fjerner hindringer, sørger for at Scrum følges</li>
+        <li><strong>Development Team</strong> – Tverrfaglig team (~7 pers) som leverer inkrement</li>
+      </ul>
+
+      <h3>Seremonier</h3>
+      <ul>
+        <li><strong>Sprint Planning</strong> – PO + team planlegger hva som gjøres i sprinten</li>
+        <li><strong>Daily Standup</strong> – 15 min daglig: Hva gjorde jeg? Hva gjør jeg? Noen hindringer?</li>
+        <li><strong>Sprint Review</strong> – Demo av inkrement for interessenter. Evaluerer leveransen.</li>
+        <li><strong>Sprint Retrospective</strong> – Teamet evaluerer prosessen. Bare for teamet.</li>
+      </ul>
+
+      <a href="/scrum/" class="btn btn-ghost btn-sm" style="margin-top:.75rem">Les mer om Scrum →</a>
+    </section>
+
+    <section id="kanban">
+      <h2>Kanban (oversikt)</h2>
+      <p>Kanban er en <strong>flytbasert metode</strong> uten faste iterasjoner. Fokus er på å la oppgaver «flyte» uten avbrudd gjennom prosessen.</p>
+      <ul>
+        <li>Kanban-board med kolonner (To Do → In Progress → Done)</li>
+        <li><strong>WIP-grenser</strong> – maks antall oppgaver per kolonne</li>
+        <li>Når du er ferdig med en oppgave, hjelper du andre fremfor å starte nye</li>
+        <li>Mål: fjerne flaskehalser i prosessen</li>
+        <li>Releaser skjer kontinuerlig – ikke ved slutt av sprint</li>
+      </ul>
+
+      <a href="/kanban/" class="btn btn-ghost btn-sm" style="margin-top:.75rem">Les mer om Kanban →</a>
+    </section>
+
+    <section id="scrum-vs-kanban">
+      <h2>Scrum vs. Kanban</h2>
+      <table class="compare-table">
+        <thead>
+          <tr><th>Egenskap</th><th>Scrum</th><th>Kanban</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Iterasjoner</td><td>Faste sprinter (1–3 uker)</td><td>Ingen faste iterasjoner</td></tr>
+          <tr><td>Planlegging</td><td>Sprint Planning hvert sprint</td><td>Kontinuerlig, pull-basert</td></tr>
+          <tr><td>Roller</td><td>PO, SM, Dev Team</td><td>Ingen pålagte roller</td></tr>
+          <tr><td>Grenser</td><td>Tidsboks (sprint)</td><td>WIP-grenser per kolonne</td></tr>
+          <tr><td>Leveranse</td><td>Ved slutten av sprint</td><td>Kontinuerlig</td></tr>
+          <tr><td>Meetings</td><td>Obligatoriske seremonier</td><td>Ingen standardmøter</td></tr>
+          <tr><td>Endringer</td><td>Ikke i pågående sprint</td><td>Tillatt når som helst</td></tr>
+          <tr><td>Best for</td><td>Klar backlog med estimerbare oppgaver</td><td>Kontinuerlig drift og support</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="lean">
+      <h2>Lean (Slank metodikk)</h2>
+      <p>Lean er en utviklingsfilosofi med økt fokus på eliminering av sløsing. Kanban er en lean-metode.</p>
+      <ul>
+        <li><strong>Eliminate waste</strong> – Ikke lag funksjoner ingen vil ha, ikke dokumentasjon ingen leser</li>
+        <li><strong>Build quality in</strong> – Kvalitet i koden fra start, ikke "rette opp" etterpå</li>
+        <li><strong>Create knowledge</strong> – Feedback-loop med kunden</li>
+        <li><strong>Defer commitment</strong> – Vent så lenge som mulig med store valg</li>
+        <li><strong>Deliver fast</strong> – Tenk enkelt, unngå over-engineering</li>
+        <li><strong>Respect people</strong> – La utviklere ta ansvar</li>
+        <li><strong>Optimize the whole</strong> – Forstå helheten og avhengigheter</li>
+      </ul>
+    </section>
+
+    <section id="xp">
+      <h2>XP – Extreme Programming</h2>
+      <p>XP var en av de første smidige metodene, med svært rigide regler. Har 29 hovedregler, blant annet:</p>
+      <ul>
+        <li>Man skal alltid programmere parvis</li>
+        <li>Lag alltid enhetstester for det du skal lage først (TDD)</li>
+        <li>Kun ett par integrerer kode om gangen</li>
+        <li>Hyppige, små releaser</li>
+      </ul>
+      <p>De fem sentrale verdiene i XP: <strong>Communication, Simplicity, Feedback, Courage</strong> og <strong>Respect</strong>.</p>
+    </section>
+
+  </article>
+</div>
+
+<section class="quiz-cta">
+  <h2>Test metodikk-kunnskapen din</h2>
+  <p>Øv på spørsmål om Agile, Scrum, Kanban og smidige prinsipper.</p>
+  <a href="/quiz/?topic=metodikk" class="btn btn-primary">Start metodikk-quiz →</a>
+</section>
+
+<div id="site-footer"></div>
+<script src="/nav.js"></script>
+</body>
+</html>

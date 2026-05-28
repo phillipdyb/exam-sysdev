@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/style.css">
+  <title>Testing – Systemutvikling</title>
+  <script>!function(){var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);else if(window.matchMedia("(prefers-color-scheme: dark)").matches)document.documentElement.setAttribute("data-theme","dark")}();</script>
+</head>
+<body style="--accent: var(--c-testing)">
+
+<header id="site-header"></header>
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <div class="breadcrumb">
+      <a href="/">Hjem</a>
+      <span class="breadcrumb-sep">/</span>
+      <a href="/teori/">Teori</a>
+      <span class="breadcrumb-sep">/</span>
+      <span>Testing</span>
+    </div>
+    <div class="topic-tag">✅ Oppgave 3 på eksamen</div>
+    <h1>Testing</h1>
+    <p class="lead">Testing validerer at programvaren oppfører seg som forventet. Dekker testpyramiden, testtyper, TDD, BDD, kontinuerlig integrasjon og ytelsestesting.</p>
+  </div>
+</div>
+
+<div class="two-col">
+
+  <aside class="toc">
+    <p class="toc-title">Innhold</p>
+    <ul class="toc-list">
+      <li><a href="#hvorfor">Hvorfor teste?</a></li>
+      <li><a href="#pyramiden">Testpyramiden</a></li>
+      <li><a href="#testtyper">Testtyper</a></li>
+      <li><a href="#enhet-vs-integrasjon">Enhet vs. integrasjon</a></li>
+      <li><a href="#tdd">TDD</a></li>
+      <li><a href="#bdd">BDD</a></li>
+      <li><a href="#ci">Kontinuerlig integrasjon</a></li>
+      <li><a href="#risk-poker">Risk poker</a></li>
+      <li><a href="#mocking">Mocking</a></li>
+      <li><a href="#ytelse">Ytelsestesting</a></li>
+    </ul>
+  </aside>
+
+  <article class="article">
+
+    <section id="hvorfor">
+      <h2>Hvorfor teste?</h2>
+      <p>Vi tester programvare for å validere at systemet:</p>
+      <ul>
+        <li>Responderer riktig ved interaksjon/input</li>
+        <li>Ikke har bugs eller andre feil</li>
+        <li>Har god nok ytelse, selv ved høyt press</li>
+        <li>Møter krav til brukervennlighet</li>
+        <li>Møter kravene satt av interessenter/product owner</li>
+        <li>Kan installeres i riktig miljø</li>
+        <li>Ikke brekker ved endringer</li>
+      </ul>
+    </section>
+
+    <section id="pyramiden">
+      <h2>Testpyramiden</h2>
+      <p>Testpyramiden viser forholdet mellom testtyper – både i mengde, hurtighet og kostnad:</p>
+
+      <table class="compare-table">
+        <thead>
+          <tr><th>Nivå</th><th>Type</th><th>Hastighet</th><th>Kostnad</th><th>Mengde</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Topp</td><td>Systemtest / E2E</td><td>Treg</td><td>Dyrt</td><td>Få</td></tr>
+          <tr><td>Midten</td><td>Integrasjonstest</td><td>Middels</td><td>Middels</td><td>Noen</td></tr>
+          <tr><td>Bunn</td><td>Enhetstest</td><td>Rask</td><td>Billig</td><td>Mange</td></tr>
+        </tbody>
+      </table>
+
+      <div class="callout callout-tip">
+        <strong>Pyramid-regelen</strong>
+        Ha mange raske enhetstester, færre integrasjonstester, og svært få langsomme end-to-end tester. Dette gir raskest mulig feedback ved lavest mulig kostnad.
+      </div>
+    </section>
+
+    <section id="testtyper">
+      <h2>Viktige testtyper</h2>
+      <div class="term-grid">
+        <dl class="term-card">
+          <dt>Enhetstesting</dt>
+          <dd>Tester individuelle komponenter/funksjoner i isolasjon. Alltid automatisert. Verktøy: JUnit (Java), pytest (Python).</dd>
+        </dl>
+        <dl class="term-card">
+          <dt>Integrasjonstesting</dt>
+          <dd>Tester samspillet mellom komponenter. F.eks. at service og database kommuniserer riktig.</dd>
+        </dl>
+        <dl class="term-card">
+          <dt>Systemtesting</dt>
+          <dd>Tester hele systemet fra ende til ende. Verifikasjon mot kravspesifikasjon.</dd>
+        </dl>
+        <dl class="term-card">
+          <dt>Akseptansetesting</dt>
+          <dd>Validerer at systemet oppfyller forretningskrav. Ofte utført av PO eller kunden.</dd>
+        </dl>
+        <dl class="term-card">
+          <dt>Regresjonstesting</dt>
+          <dd>Sikrer at ny kode ikke bryter eksisterende funksjonalitet. Kjøres automatisk ved endringer.</dd>
+        </dl>
+        <dl class="term-card">
+          <dt>Smoke testing</dt>
+          <dd>Rask sjekk av kritisk funksjonalitet etter deployment. «Brenner bygget?»</dd>
+        </dl>
+        <dl class="term-card">
+          <dt>Eksplorativ testing</dt>
+          <dd>Ustrukturert manuell testing der testeren utforsker systemet kreativt. Finner uventede bugs.</dd>
+        </dl>
+        <dl class="term-card">
+          <dt>Ytelsestesting</dt>
+          <dd>Tester systemets ytelse under last. Undertyper: last-, stress- og spike-test.</dd>
+        </dl>
+      </div>
+    </section>
+
+    <section id="enhet-vs-integrasjon">
+      <h2>Enhetstesting vs. integrasjonstesting</h2>
+      <table class="compare-table">
+        <thead>
+          <tr><th>Egenskap</th><th>Enhetstesting</th><th>Integrasjonstesting</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Hva testes</td><td>Én funksjon/klasse isolert</td><td>Samspillet mellom komponenter</td></tr>
+          <tr><td>Avhengigheter</td><td>Mockes/stubbes ut</td><td>Reelle avhengigheter brukes</td></tr>
+          <tr><td>Hastighet</td><td>Meget rask (millisekunder)</td><td>Tregere (sekunder)</td></tr>
+          <tr><td>Vedlikehold</td><td>Enklere å vedlikeholde</td><td>Mer kompleks oppsett</td></tr>
+          <tr><td>Finner</td><td>Feil i logikk</td><td>Feil i grensesnitt/integrasjon</td></tr>
+          <tr><td>Kjøres</td><td>Kontinuerlig i CI</td><td>I CI, men gjerne sjeldnere</td></tr>
+        </tbody>
+      </table>
+
+      <div class="callout">
+        <strong>Utfyller hverandre</strong>
+        Enhetstesting finner feil tidlig i individuelle komponenter. Integrasjonstesting finner feil i samspillet. Begge trengs for robust kodebase.
+      </div>
+    </section>
+
+    <section id="tdd">
+      <h2>TDD – Test Driven Development</h2>
+      <p>TDD er en <strong>test-first tilnærming</strong>: tester skrives FØR koden implementeres.</p>
+
+      <h3>Red-Green-Refactor syklusen</h3>
+      <ol class="steps">
+        <li class="step">
+          <div class="step-num" style="background:#dc2626">R</div>
+          <div class="step-content">
+            <h4>Red – Skriv en test som feiler</h4>
+            <p>Skriv en test for ønsket funksjonalitet. Testen feiler fordi koden ikke er implementert ennå.</p>
+          </div>
+        </li>
+        <li class="step">
+          <div class="step-num" style="background:#16a34a">G</div>
+          <div class="step-content">
+            <h4>Green – Implementer minste mulig kode</h4>
+            <p>Skriv akkurat nok kode til at testen passerer. Ikke mer.</p>
+          </div>
+        </li>
+        <li class="step">
+          <div class="step-num">R</div>
+          <div class="step-content">
+            <h4>Refactor – Forbedre koden</h4>
+            <p>Rydd opp koden uten å endre oppførselen. Testen skal fortsatt passere.</p>
+          </div>
+        </li>
+      </ol>
+
+      <h3>Fordeler og utfordringer</h3>
+      <div class="pros-cons">
+        <div class="pros">
+          <h4>Fordeler</h4>
+          <ul>
+            <li>Bedre kodekvalitet og struktur</li>
+            <li>Høy testdekning fra start</li>
+            <li>Raskere feil-feedback</li>
+            <li>Testene fungerer som dokumentasjon</li>
+            <li>Økt tillit til koden</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>Utfordringer</h4>
+          <ul>
+            <li>Bratt lærekurve</li>
+            <li>Tidsbruk initialt høyere</li>
+            <li>Testsuiten krever løpende vedlikehold</li>
+            <li>Ikke alltid naturlig for alle typer kode</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="bdd">
+      <h2>BDD – Behavior Driven Development</h2>
+      <p>BDD er en utvidelse av TDD som fokuserer på <strong>akseptansetester fra sluttbrukerens perspektiv</strong>. Involverer utvikler, tester og Product Owner.</p>
+
+      <h3>Gherkin-språk</h3>
+      <p>BDD-tester skrives i naturlig språk (Gherkin) med strukturen:</p>
+      <div class="callout callout-important">
+        <strong>Gherkin-struktur</strong>
+        <code style="font-family: monospace; display:block; margin-top:.5rem; white-space:pre">
+Given [forutsetning]
+When [handling]
+Then [forventet resultat]
+        </code>
+      </div>
+
+      <h3>TDD vs. BDD</h3>
+      <table class="compare-table">
+        <thead>
+          <tr><th>Egenskap</th><th>TDD</th><th>BDD</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Fokus</td><td>Enhetstester, kode-nivå</td><td>Akseptansetester, bruker-nivå</td></tr>
+          <tr><td>Involverte</td><td>Utviklere</td><td>Dev + tester + PO</td></tr>
+          <tr><td>Språk</td><td>Programmeringsspråk</td><td>Gherkin (naturlig språk)</td></tr>
+          <tr><td>Nivå</td><td>Lavt (unit)</td><td>Høyt (feature/acceptance)</td></tr>
+        </tbody>
+      </table>
+
+      <div class="callout callout-tip">
+        <strong>TDD + BDD = best of both worlds</strong>
+        TDD sikrer kodekvalitet på enhetsnivå. BDD sikrer at use cases fungerer fra sluttbrukerens perspektiv. De utfyller hverandre.
+      </div>
+    </section>
+
+    <section id="ci">
+      <h2>Kontinuerlig integrasjon (CI/CD)</h2>
+      <p>Kontinuerlig integrasjon (CI) handler om at utviklere pusher kode hyppig, og at tester kjøres automatisk ved hver endring.</p>
+
+      <h3>Slik henger CI og smidig utvikling sammen</h3>
+      <ul>
+        <li>CI muliggjør hyppige releaser</li>
+        <li>Hyppige releaser betyr liten delta per release → enklere å finne bugs</li>
+        <li>Enklere å rulle tilbake ved feil</li>
+        <li>Uten CI er hyppige releaser nesten umulig</li>
+      </ul>
+
+      <h3>CI-pipeline</h3>
+      <ol>
+        <li>Utvikler pusher kode / åpner pull request</li>
+        <li>CI-systemet kjører alle tester automatisk</li>
+        <li>Rapport leveres i pull requesten</li>
+        <li>Koden kan merges hvis tester passerer</li>
+      </ol>
+    </section>
+
+    <section id="risk-poker">
+      <h2>Risk poker</h2>
+      <p>Risk poker er en teknikk for å <strong>prioritere testinnsats</strong> basert på risiko. Hele teamet scorer sannsynligheten og konsekvensen av ulike risikofaktorer med kortstokk.</p>
+      <ul>
+        <li>Alle scorer samtidig (som planning poker)</li>
+        <li>Gjennomsnittet beregnes</li>
+        <li>Diskusjon der teammedlemmer er uenige</li>
+        <li>Risiko = sannsynlighet × konsekvens</li>
+        <li>Prioriter testing av høy-risiko-områder</li>
+      </ul>
+    </section>
+
+    <section id="mocking">
+      <h2>Mocking</h2>
+      <p>Når kode-moduler er avhengige av hverandre, kan det være vanskelig å teste dem isolert. <strong>Mocking</strong> løser dette ved å erstatte avhengigheter med kontrollerte «dummy»-versjoner.</p>
+      <ul>
+        <li>Mocken implementerer samme grensesnitt, men returnerer hardkodede data</li>
+        <li>Gjør det mulig å teste én modul fullstendig isolert</li>
+        <li>Verktøy: Mockito (Java), unittest.mock (Python)</li>
+        <li>NB: Pass på at mock-tester ikke erstatter integrasjonstester</li>
+      </ul>
+    </section>
+
+    <section id="ytelse">
+      <h2>Ytelsestesting</h2>
+      <p>Ytelsestesting verifiserer at systemet tåler forventet last og ikke degraderer under press.</p>
+      <div class="term-grid">
+        <dl class="term-card">
+          <dt>Lasttest (Load test)</dt>
+          <dd>Tester systemet under forventet normalbelastning over tid.</dd>
+        </dl>
+        <dl class="term-card">
+          <dt>Stresstest</dt>
+          <dd>Tester jevn, vedvarende last over tid. Finner grensen for kapasiteten.</dd>
+        </dl>
+        <dl class="term-card">
+          <dt>Spike-test</dt>
+          <dd>Tester plutselig, kortvarig last – f.eks. ved populær ticketlansering. Finner hvordan systemet reagerer på unormale topper.</dd>
+        </dl>
+      </div>
+
+      <h3>Fremgangsmåte</h3>
+      <ol>
+        <li>Finn forventet last (antall brukere, transaksjoner/sek)</li>
+        <li>Test i produksjonslikt miljø</li>
+        <li>Identifiser hva som feiler/bremser først</li>
+        <li>Vurder hva som kan skaleres opp (horisontalt/vertikalt)</li>
+      </ol>
+    </section>
+
+  </article>
+</div>
+
+<section class="quiz-cta">
+  <h2>Test testing-kunnskapen din</h2>
+  <p>Øv på spørsmål om testtyper, TDD, BDD og kontinuerlig integrasjon.</p>
+  <a href="/quiz/?topic=testing" class="btn btn-primary">Start testing-quiz →</a>
+</section>
+
+<div id="site-footer"></div>
+<script src="/nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/style.css">
+  <title>Kanban – Systemutvikling</title>
+  <script>!function(){var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);else if(window.matchMedia("(prefers-color-scheme: dark)").matches)document.documentElement.setAttribute("data-theme","dark")}();</script>
+</head>
+<body style="--accent: var(--c-kanban)">
+
+<header id="site-header"></header>
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <div class="breadcrumb">
+      <a href="/">Hjem</a>
+      <span class="breadcrumb-sep">/</span>
+      <a href="/metodikk/">Metodikk</a>
+      <span class="breadcrumb-sep">/</span>
+      <span>Kanban</span>
+    </div>
+    <div class="topic-tag">📋 Lean metodikk</div>
+    <h1>Kanban</h1>
+    <p class="lead">Kanban er en flytbasert metodikk uten faste sprinter. Fokuset er på å la oppgaver flyte jevnt gjennom prosessen ved å bruke WIP-grenser for å unngå flaskehalser.</p>
+  </div>
+</div>
+
+<div class="two-col">
+
+  <aside class="toc">
+    <p class="toc-title">Innhold</p>
+    <ul class="toc-list">
+      <li><a href="#hva-er-kanban">Hva er Kanban?</a></li>
+      <li><a href="#kanban-board">Kanban-board</a></li>
+      <li><a href="#wip">WIP-grenser</a></li>
+      <li><a href="#flaskehalser">Flaskehalser</a></li>
+      <li><a href="#vs-scrum">Kanban vs. Scrum</a></li>
+      <li><a href="#nar-bruke">Når bruke Kanban?</a></li>
+    </ul>
+  </aside>
+
+  <article class="article">
+
+    <section id="hva-er-kanban">
+      <h2>Hva er Kanban?</h2>
+      <p>Kanban er en <strong>flytbasert</strong> metodikk fra Lean-tradisjonen. Opprinnelig utviklet av Toyota for produksjonsstyring, tilpasset softwareutvikling på 2000-tallet.</p>
+      <p>Kjennetegn:</p>
+      <ul>
+        <li><strong>Ingen faste sprinter</strong> – arbeidet flyter kontinuerlig</li>
+        <li><strong>Kanban-board</strong> – visuell oversikt over arbeidsflyt</li>
+        <li><strong>WIP-grenser</strong> (Work In Progress) – begrenser antall aktive oppgaver</li>
+        <li><strong>Kontinuerlig leveranse</strong> – releaser skjer når noe er ferdig</li>
+        <li><strong>Ingen pålagte roller</strong> – fleksibel teamstruktur</li>
+      </ul>
+    </section>
+
+    <section id="kanban-board">
+      <h2>Kanban-board</h2>
+      <p>Kanban-boardet er hjertet i metoden. Det visualiserer arbeidsflyten med kolonner som representerer ulike tilstander en oppgave kan være i:</p>
+
+      <table class="compare-table">
+        <thead>
+          <tr><th>To Do</th><th>In Progress</th><th>Review</th><th>Done</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Oppgave A<br>Oppgave B<br>Oppgave C</td>
+            <td>Oppgave D<br><small>(WIP-grense: 2)</small></td>
+            <td>Oppgave E<br><small>(WIP-grense: 2)</small></td>
+            <td>Oppgave F<br>Oppgave G</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>Teamet <strong>trekker</strong> (pull) oppgaver fra venstre mot høyre etter hvert som kapasitet frigjøres.</p>
+    </section>
+
+    <section id="wip">
+      <h2>WIP-grenser</h2>
+      <p>Work In Progress-grenser er en av de viktigste egenskapene til Kanban. De setter et <strong>maksimalt antall oppgaver</strong> som kan være aktive i en kolonne samtidig.</p>
+
+      <div class="callout callout-important">
+        <strong>Hvorfor WIP-grenser?</strong>
+        Multitasking er ineffektivt. Å jobbe med for mange ting samtidig fører til kontekst-bytte og redusert kvalitet. WIP-grenser tvinger teamet til å fullføre pågående arbeid før nytt startes.
+      </div>
+
+      <h3>Effekten av WIP-grenser</h3>
+      <ul>
+        <li>Avslører flaskehalser (kolonner som fylles opp)</li>
+        <li>Øker fokus og kvalitet</li>
+        <li>Reduserer «work in flight» og halvferdig arbeid</li>
+        <li>Kortere gjennomløpstid per oppgave</li>
+      </ul>
+    </section>
+
+    <section id="flaskehalser">
+      <h2>Identifisere og fjerne flaskehalser</h2>
+      <p>Når en kolonne nærmer seg sin WIP-grense, er det et signal om en <strong>flaskehals</strong>. Kanban-tankegangen sier:</p>
+      <p><em>«Dersom du er ferdig med oppgavene i din kolonne, er hovedtanken at du skal hjelpe andre i andre kolonner, fremfor å starte nye oppgaver.»</em></p>
+
+      <div class="callout callout-tip">
+        <strong>Praktisk eksempel</strong>
+        Dersom «Review»-kolonnen er full men «Done» er tom, betyr det at reviewere er flaskehalsen. Da bør folk fra «In Progress» hjelpe til med å reviewe fremfor å starte nye oppgaver.
+      </div>
+    </section>
+
+    <section id="vs-scrum">
+      <h2>Kanban vs. Scrum</h2>
+      <table class="compare-table">
+        <thead>
+          <tr><th>Egenskap</th><th>Kanban</th><th>Scrum</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Rammeverk</td><td>Flytbasert</td><td>Tidsboksbasert</td></tr>
+          <tr><td>Iterasjoner</td><td>Ingen faste</td><td>Sprinter (1–3 uker)</td></tr>
+          <tr><td>Grenser</td><td>WIP-grenser per kolonne</td><td>Tidsboks (sprint)</td></tr>
+          <tr><td>Planlegging</td><td>Kontinuerlig, ad hoc</td><td>Sprint Planning</td></tr>
+          <tr><td>Roller</td><td>Ingen pålagte</td><td>PO, SM, Dev Team</td></tr>
+          <tr><td>Endringer</td><td>Tillatt når som helst</td><td>Ikke i pågående sprint</td></tr>
+          <tr><td>Leveranse</td><td>Kontinuerlig</td><td>Slutt av sprint</td></tr>
+          <tr><td>Møter</td><td>Ingen standardiserte</td><td>Daily, Review, Retro</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="nar-bruke">
+      <h2>Når passer Kanban best?</h2>
+      <ul>
+        <li>Kontinuerlig drift og support (f.eks. bug-fixing)</li>
+        <li>Oppgaver med varierende størrelse og prioritet</li>
+        <li>Team som allerede har god arbeidsflyt og vil optimalisere den</li>
+        <li>Når strenge tidsplaner ikke er nødvendig</li>
+      </ul>
+
+      <h3>Scrum passer bedre når:</h3>
+      <ul>
+        <li>Teamet starter fra scratch og trenger struktur</li>
+        <li>Det er klare leveransefrister</li>
+        <li>Det er en definert produktbacklog som kan planlegges</li>
+        <li>Teamet trenger regelmessig feedback fra interessenter</li>
+      </ul>
+    </section>
+
+  </article>
+</div>
+
+<section class="quiz-cta">
+  <h2>Test Kanban-kunnskapen din</h2>
+  <p>Øv på spørsmål om Kanban, WIP-grenser og sammenligning med Scrum.</p>
+  <a href="/quiz/?topic=metodikk" class="btn btn-primary">Start metodikk-quiz →</a>
+</section>
+
+<div id="site-footer"></div>
+<script src="/nav.js"></script>
+</body>
+</html>

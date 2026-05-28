@@ -1,54 +1,139 @@
 <!DOCTYPE html>
 <html lang="no">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
-    <title>Systemutvikling Quiz</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/style.css">
+  <title>Systemutvikling – IDATx1005</title>
+  <script>!function(){var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);else if(window.matchMedia("(prefers-color-scheme: dark)").matches)document.documentElement.setAttribute("data-theme","dark")}();</script>
 </head>
 <body>
-    <div class="container">
-        <h1>📚 Systemutvikling Quiz</h1>
-        
-        <div id="startScreen">
-            <div class="quiz-controls">
-                <button onclick="startQuiz('all')">Start alle 50 spørsmål</button>
-                <button onclick="startQuiz('random20')">Start 20 tilfeldige</button>
-                <button onclick="startQuiz('random10')">Start 10 tilfeldige</button>
-            </div>
-        </div>
 
-        <div id="quizScreen" class="hidden">
-            <div class="progress-bar">
-                <div class="progress-fill" id="progressBar">0%</div>
-            </div>
+<header id="site-header"></header>
 
-            <div class="question-card">
-                <div class="question-number" id="questionNumber"></div>
-                <div class="question-text" id="questionText"></div>
-                <div class="options" id="optionsContainer"></div>
-                <div id="feedback" class="feedback hidden"></div>
-            </div>
+<main>
 
-            <div class="navigation">
-                <button id="prevBtn" onclick="previousQuestion()" disabled>← Forrige</button>
-                <div class="nav-buttons">
-                    <button id="checkBtn" onclick="checkAnswer()">Sjekk svar</button>
-                    <button id="nextBtn" onclick="nextQuestion()" disabled>Neste →</button>
-                </div>
-            </div>
-        </div>
-
-        <div id="resultsScreen" class="hidden">
-            <div class="results">
-                <div class="emoji" id="resultEmoji"></div>
-                <h2>Quiz fullført!</h2>
-                <div class="score" id="finalScore"></div>
-                <div class="score-details" id="scoreDetails"></div>
-                <button onclick="location.reload()">Start på nytt</button>
-            </div>
-        </div>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-inner">
+      <span class="hero-eyebrow">IDATx1005 · NTNU · Eksamensressurs</span>
+      <h1>Systemutvikling</h1>
+      <p class="hero-subtitle">
+        En komplett eksamensressurs for faget systemutvikling. Les teori, forstå nøkkelkonsepter og test deg selv med quiz.
+      </p>
+      <div class="hero-actions">
+        <a href="/teori/" class="btn btn-primary">Les teori</a>
+        <a href="/quiz/" class="btn btn-outline">Ta quiz →</a>
+      </div>
     </div>
+  </section>
+
+  <!-- Stats -->
+  <div class="stats-bar">
+    <div class="stats-inner">
+      <div class="stat">
+        <span class="stat-num">50</span>
+        <span class="stat-label">Quiz-spørsmål</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">6</span>
+        <span class="stat-label">Temaer</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">5</span>
+        <span class="stat-label">Eksamensoppgaver</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">2023</span>
+        <span class="stat-label">Eksamensår</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Topics -->
+  <section class="section">
+    <div class="section-inner">
+      <div class="section-header">
+        <h2>Temaer</h2>
+        <p>Klikk på et tema for å lese teori og øve deg til eksamen.</p>
+      </div>
+      <div class="topics-grid">
+
+        <a href="/mmi/" class="topic-card" style="--accent: var(--c-mmi)">
+          <div class="topic-card-icon">👁️</div>
+          <h3>MMI & Interaksjonsdesign</h3>
+          <p>Don Normans 6 designprinsipper, interaksjonsdesignprosessen, prototyping og universell utforming (WCAG).</p>
+          <div class="topic-card-meta">
+            <span>Oppgave 5 på eksamen</span>
+            <span class="topic-card-arrow">→</span>
+          </div>
+        </a>
+
+        <a href="/metodikk/" class="topic-card" style="--accent: var(--c-metodikk)">
+          <div class="topic-card-icon">⚡</div>
+          <h3>Utviklingsmetodikk</h3>
+          <p>Agile Manifesto, Scrum, Kanban og Lean. Smidig utvikling med sprinter, WIP-grenser og kontinuerlig forbedring.</p>
+          <div class="topic-card-meta">
+            <span>Oppgave 1 på eksamen</span>
+            <span class="topic-card-arrow">→</span>
+          </div>
+        </a>
+
+        <a href="/arkitektur/" class="topic-card" style="--accent: var(--c-arkitektur)">
+          <div class="topic-card-icon">🏗️</div>
+          <h3>Programvarearkitektur</h3>
+          <p>Arkitekturmønstre som Microservices, MVC og tre-lags arkitektur. Høy styrke og lave koblinger.</p>
+          <div class="topic-card-meta">
+            <span>Oppgave 2 på eksamen</span>
+            <span class="topic-card-arrow">→</span>
+          </div>
+        </a>
+
+        <a href="/testing/" class="topic-card" style="--accent: var(--c-testing)">
+          <div class="topic-card-icon">✅</div>
+          <h3>Testing</h3>
+          <p>Enhetstesting, integrasjonstesting, TDD, BDD, testpyramiden og kontinuerlig integrasjon (CI/CD).</p>
+          <div class="topic-card-meta">
+            <span>Oppgave 3 på eksamen</span>
+            <span class="topic-card-arrow">→</span>
+          </div>
+        </a>
+
+        <a href="/etikk/" class="topic-card" style="--accent: var(--c-etikk)">
+          <div class="topic-card-icon">⚖️</div>
+          <h3>Etikk & Personvern</h3>
+          <p>GDPR, personopplysningsloven, profesjonsetikk og personvern gjennom systemutviklingens livssyklus.</p>
+          <div class="topic-card-meta">
+            <span>Etikk & lovverk</span>
+            <span class="topic-card-arrow">→</span>
+          </div>
+        </a>
+
+        <a href="/uml/" class="topic-card" style="--accent: var(--c-uml)">
+          <div class="topic-card-icon">📊</div>
+          <h3>UML-diagrammer</h3>
+          <p>Use case-diagrammer, domenemodell, sekvensdiagrammer og aktivitetsdiagrammer i UML.</p>
+          <div class="topic-card-meta">
+            <span>Modellering & design</span>
+            <span class="topic-card-arrow">→</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Quiz CTA -->
+  <section class="quiz-cta">
+    <h2>Klar til å teste deg selv?</h2>
+    <p>50 spørsmål basert på eksamensoppgaver fra 2023. Velg tema eller ta alle på en gang.</p>
+    <a href="/quiz/" class="btn btn-primary">Start quiz</a>
+  </section>
+
+</main>
+
+<div id="site-footer"></div>
+<script src="/nav.js"></script>
 </body>
 </html>

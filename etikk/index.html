@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/style.css">
+  <title>Etikk & Personvern – Systemutvikling</title>
+  <script>!function(){var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);else if(window.matchMedia("(prefers-color-scheme: dark)").matches)document.documentElement.setAttribute("data-theme","dark")}();</script>
+</head>
+<body style="--accent: var(--c-etikk)">
+
+<header id="site-header"></header>
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <div class="breadcrumb">
+      <a href="/">Hjem</a>
+      <span class="breadcrumb-sep">/</span>
+      <a href="/teori/">Teori</a>
+      <span class="breadcrumb-sep">/</span>
+      <span>Etikk</span>
+    </div>
+    <div class="topic-tag">⚖️ Etikk & lovverk</div>
+    <h1>Etikk & Personvern</h1>
+    <p class="lead">Profesjonsetikk, GDPR og personvern er sentrale temaer i systemutvikling. Programvareutviklere har ansvar for samfunnskonsekvensene av teknologien de bygger.</p>
+  </div>
+</div>
+
+<div class="two-col">
+
+  <aside class="toc">
+    <p class="toc-title">Innhold</p>
+    <ul class="toc-list">
+      <li><a href="#profesjonsetikk">Profesjonsetikk</a></li>
+      <li><a href="#gdpr">GDPR</a></li>
+      <li><a href="#rettigheter">GDPR-rettigheter</a></li>
+      <li><a href="#unntak">Unntak fra GDPR</a></li>
+      <li><a href="#livssyklus">Datatilsynets livssyklus</a></li>
+      <li><a href="#deling">Deling av sensitiv data</a></li>
+    </ul>
+  </aside>
+
+  <article class="article">
+
+    <section id="profesjonsetikk">
+      <h2>Profesjonsetikk</h2>
+      <p>Ingeniøretikk handler om de <strong>moralske forventningene</strong> til ingeniøryrket. For programvareutviklere gjelder dette i aller høyeste grad – programvaren vi bygger påvirker samfunnet.</p>
+
+      <h3>Regulering av etikk</h3>
+      <ul>
+        <li><strong>Lovregulerte standarder</strong> – f.eks. GDPR, diskriminerings- og tilgjengelighetsloven</li>
+        <li><strong>Yrkesetiske retningslinjer</strong> – f.eks. NITO, IEEE Code of Ethics</li>
+        <li><strong>Uskrevne regler</strong> – bransjenormer og faglig skjønn</li>
+      </ul>
+
+      <div class="callout callout-warning">
+        <strong>Samfunnsansvar</strong>
+        Programvareutviklere har ansvar for samfunnskonsekvensene av teknologien de utvikler – ikke bare overfor arbeidsgiver og kunder, men overfor samfunnet som helhet.
+      </div>
+
+      <h3>Etiske problemstillinger i praksis</h3>
+      <ul>
+        <li>Algoritmisk diskriminering (f.eks. AI som favoriserer visse grupper)</li>
+        <li>Innsamling og bruk av persondata uten tilstrekkelig samtykke</li>
+        <li>Sikkerhetshull som bevisst ikke lappes</li>
+        <li>Utvikling av teknologi for overvåking eller sensur</li>
+        <li>Hvem har ansvar når autonome systemer gjør feil?</li>
+      </ul>
+    </section>
+
+    <section id="gdpr">
+      <h2>GDPR – General Data Protection Regulation</h2>
+      <p>GDPR er EUs personvernforordning fra 2018, implementert i norsk rett gjennom personopplysningsloven. Den regulerer hvordan persondata kan samles inn, behandles og lagres.</p>
+
+      <h3>Personopplysningsloven</h3>
+      <p>Loven legger føringer for:</p>
+      <ul>
+        <li>Hva som er lovlig å samle inn</li>
+        <li>Hvordan persondata skal lagres (sikkerhet)</li>
+        <li>Hvem som har tilgang</li>
+        <li>Hvor lenge data kan beholdes</li>
+        <li>Hvilke rettigheter den registrerte har</li>
+      </ul>
+    </section>
+
+    <section id="rettigheter">
+      <h2>GDPR – 7 rettigheter for enkeltpersoner</h2>
+      <div class="term-grid">
+        <dl class="term-card">
+          <dt>1. Rett til å bli informert</dt>
+          <dd>Du har rett til å vite at data samles inn, hva det brukes til, og hvem som har tilgang.</dd>
+        </dl>
+        <dl class="term-card">
+          <dt>2. Rett til innsyn</dt>
+          <dd>Du kan be om å se hvilke opplysninger et selskap har om deg.</dd>
+        </dl>
+        <dl class="term-card">
+          <dt>3. Rett til retting</dt>
+          <dd>Du kan kreve at feilaktige opplysninger rettes opp.</dd>
+        </dl>
+        <dl class="term-card">
+          <dt>4. Rett til å bli glemt</dt>
+          <dd>Du kan kreve at opplysninger slettes (med visse unntak).</dd>
+        </dl>
+        <dl class="term-card">
+          <dt>5. Rett til begrensning</dt>
+          <dd>Du kan begrense behandlingen av dine opplysninger i visse situasjoner.</dd>
+        </dl>
+        <dl class="term-card">
+          <dt>6. Rett til å protestere</dt>
+          <dd>Du kan protestere mot behandling, f.eks. mot direktemarketing.</dd>
+        </dl>
+        <dl class="term-card">
+          <dt>7. Rett til dataportabilitet</dt>
+          <dd>Du kan be om å få dine data i et maskinlesbart format og flytte dem til et annet selskap.</dd>
+        </dl>
+      </div>
+    </section>
+
+    <section id="unntak">
+      <h2>Unntak fra GDPR-rettigheter</h2>
+      <p>GDPR-rettighetene er ikke absolutte. Det finnes unntak, men databehandleren må dokumentere at unntaket gjelder.</p>
+
+      <h3>Eksempler på unntak</h3>
+      <ul>
+        <li><strong>Juridiske forpliktelser</strong> – f.eks. regnskapsplikt krever lagring av fakturadata i 5 år</li>
+        <li><strong>Nasjonal sikkerhet</strong> – politiet kan ha tilgang til data for etterforskningsformål</li>
+        <li><strong>Beskyttelse av andres rettigheter</strong> – f.eks. retten til å bli glemt kan avveies mot ytringsfriheten</li>
+        <li><strong>Forskning og statistikk</strong> – anonymiserte data til forskning kan beholdes lenger</li>
+        <li><strong>Vitale interesser</strong> – nødtjenester kan behandle data uten samtykke</li>
+      </ul>
+
+      <div class="callout callout-important">
+        <strong>Viktig</strong>
+        Unntakene er snevre og må begrunnes. Det er ikke slik at virksomheter kan «velge» å ta unntak – det må eksistere en lovhjemmel.
+      </div>
+    </section>
+
+    <section id="livssyklus">
+      <h2>Datatilsynets livssyklus for personvern</h2>
+      <p>Datatilsynet anbefaler å integrere personvern i <strong>alle faser</strong> av systemutviklingen – ikke bare i release-fasen:</p>
+
+      <ol class="steps">
+        <li class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h4>Opplæring</h4>
+            <p>Teamet må forstå GDPR og personvern-prinsipper.</p>
+          </div>
+        </li>
+        <li class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h4>Krav</h4>
+            <p>Personvern-krav tas inn i kravspesifikasjonen. Dataminimering – samle kun det som er nødvendig.</p>
+          </div>
+        </li>
+        <li class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h4>Design</h4>
+            <p>Privacy by design: arkitekturvalg som minimerer personvern-risiko.</p>
+          </div>
+        </li>
+        <li class="step">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <h4>Koding</h4>
+            <p>Sikker kode: kryptering, tilgangsstyring, logg-rydding.</p>
+          </div>
+        </li>
+        <li class="step">
+          <div class="step-num">5</div>
+          <div class="step-content">
+            <h4>Testing</h4>
+            <p>Test for dataeksponering, tilgangsfeil og uautorisert bruk.</p>
+          </div>
+        </li>
+        <li class="step">
+          <div class="step-num">6</div>
+          <div class="step-content">
+            <h4>Release</h4>
+            <p>Sikkerhetsvurdering og beredskapsplan for databrudd.</p>
+          </div>
+        </li>
+        <li class="step">
+          <div class="step-num">7</div>
+          <div class="step-content">
+            <h4>Vedlikehold</h4>
+            <p>Oppdater sikkerhetspatches, slett unødvendige data, responder på henvendelser.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section id="deling">
+      <h2>Deling av sensitiv brukerdata</h2>
+      <p>Dersom to applikasjoner skal dele sensitive brukerdata, er de viktigste GDPR-hensynene:</p>
+      <ul>
+        <li><strong>Informer brukerne tydelig</strong> – hva deles, med hvem og til hva</li>
+        <li><strong>Dataminimering</strong> – del kun det som er strengt nødvendig</li>
+        <li><strong>Slett ved avsluttet samarbeid</strong> – data skal ikke leve lenger enn nødvendig</li>
+        <li><strong>Særskilt policy for sensitiv data</strong> – lokasjon, helse, politisk tilhørighet krever ekstra varsomhet</li>
+        <li><strong>Beredskapsplan for sikkerhetsbrudd</strong> – databrudd må varsles Datatilsynet innen 72 timer</li>
+        <li><strong>Databehandleravtale</strong> – juridisk avtale mellom de to virksomhetene</li>
+      </ul>
+    </section>
+
+  </article>
+</div>
+
+<section class="quiz-cta">
+  <h2>Test etikk- og personvern-kunnskapen din</h2>
+  <p>Øv på spørsmål om GDPR, rettigheter og profesjonsetikk.</p>
+  <a href="/quiz/?topic=personvern" class="btn btn-primary">Start personvern-quiz →</a>
+</section>
+
+<div id="site-footer"></div>
+<script src="/nav.js"></script>
+</body>
+</html>
