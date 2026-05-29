@@ -48,11 +48,15 @@ function updateStartCard() {
     mmi: 'MMI & Interaksjonsdesign',
     personvern: 'Personvern & Etikk',
     metodikk: 'Utviklingsmetodikk',
+    scrum: 'Scrum',
+    kanban: 'Kanban',
     testing: 'Testing',
-    arkitektur: 'Programvarearkitektur'
+    arkitektur: 'Programvarearkitektur',
+    uml: 'UML-diagrammer',
+    baerekraft: 'Bærekraft & Systemutvikling'
   };
   if (titleEl) titleEl.textContent = topicNames[activeTopic] || 'Quiz';
-  if (descEl) descEl.textContent = `${filtered.length} spørsmål` + (activeTopic !== 'all' ? ` om ${topicNames[activeTopic].toLowerCase()}.` : ' fra alle temaer i IDATx1005.');
+  if (descEl) descEl.textContent = `${filtered.length} spørsmål` + (activeTopic !== 'all' ? ` om ${(topicNames[activeTopic] || activeTopic).toLowerCase()}.` : ' fra alle temaer i IDATx1005.');
   if (btnsEl) {
     if (activeTopic === 'all') {
       btnsEl.innerHTML = `

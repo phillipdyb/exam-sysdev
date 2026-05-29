@@ -20,9 +20,13 @@ const NAV_HTML = `
         <ul class="nav-dropdown-menu">
           <li><a href="/mmi/">MMI & IxD</a></li>
           <li><a href="/metodikk/">Metodikk</a></li>
+          <li><a href="/scrum/">Scrum</a></li>
+          <li><a href="/kanban/">Kanban</a></li>
           <li><a href="/arkitektur/">Arkitektur</a></li>
           <li><a href="/testing/">Testing</a></li>
           <li><a href="/etikk/">Etikk</a></li>
+          <li><a href="/uml/">UML</a></li>
+          <li><a href="/baerekraft/">Bærekraft</a></li>
         </ul>
       </li>
       <li class="nav-sep" aria-hidden="true"></li>
@@ -45,9 +49,13 @@ const FOOTER_HTML = `
     <a href="/match/">Match</a> &middot;
     <a href="/mmi/">MMI</a> &middot;
     <a href="/metodikk/">Metodikk</a> &middot;
+    <a href="/scrum/">Scrum</a> &middot;
+    <a href="/kanban/">Kanban</a> &middot;
     <a href="/arkitektur/">Arkitektur</a> &middot;
     <a href="/testing/">Testing</a> &middot;
-    <a href="/etikk/">Etikk</a>
+    <a href="/etikk/">Etikk</a> &middot;
+    <a href="/uml/">UML</a> &middot;
+    <a href="/baerekraft/">Bærekraft</a>
   </p>
 </footer>
 `;
@@ -79,12 +87,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Chapter navigation — injected on all theory pages
   const CHAPTERS = [
-    { href: '/teori/',      title: 'Teori-oversikt',    icon: '📚' },
-    { href: '/mmi/',        title: 'MMI & IxD',         icon: '👁️' },
-    { href: '/metodikk/',   title: 'Metodikk',          icon: '⚡' },
-    { href: '/arkitektur/', title: 'Arkitektur',        icon: '🏗️' },
-    { href: '/testing/',    title: 'Testing',           icon: '✅' },
-    { href: '/etikk/',      title: 'Etikk & Personvern', icon: '⚖️' },
+    { href: '/teori/',      title: 'Teori-oversikt',       icon: '📚' },
+    { href: '/mmi/',        title: 'MMI & IxD',            icon: '👁️' },
+    { href: '/metodikk/',   title: 'Metodikk',             icon: '⚡' },
+    { href: '/scrum/',      title: 'Scrum',                icon: '🔄' },
+    { href: '/kanban/',     title: 'Kanban',               icon: '📋' },
+    { href: '/arkitektur/', title: 'Arkitektur',           icon: '🏗️' },
+    { href: '/testing/',    title: 'Testing',              icon: '✅' },
+    { href: '/etikk/',      title: 'Etikk & Personvern',   icon: '⚖️' },
+    { href: '/uml/',        title: 'UML-diagrammer',       icon: '📊' },
+    { href: '/baerekraft/', title: 'Bærekraft',            icon: '🌱' },
   ];
 
   const chIdx = CHAPTERS.findIndex(c => path === c.href || path.startsWith(c.href));

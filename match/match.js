@@ -85,6 +85,47 @@ const allMatchCards = [
   { front: 'Lagdelt arkitektur', back: 'System strukturert i horisontale lag: presentasjon, forretningslogikk og datahåndtering', topic: 'arkitektur' },
   { front: 'Dependency Injection', back: 'Avhengigheter sendes inn utenfra fremfor å opprettes internt i klassen', topic: 'arkitektur' },
   { front: 'Teknisk gjeld', back: 'Kostnadene ved å velge en rask løsning fremfor en bedre, men mer tidkrevende løsning', topic: 'arkitektur' },
+
+  // UML
+  { front: 'Use case-diagram', back: 'Diagram som viser hvem som gjør hva med et system (aktører og bruksscenarioer)', topic: 'uml' },
+  { front: 'Aktør (UML)', back: 'Person eller ekstern entitet som bruker systemet; tegnes som en strekfigur', topic: 'uml' },
+  { front: '«include» (UML)', back: 'Obligatorisk avhengighet mellom use cases; den inkluderte use casen utføres alltid', topic: 'uml' },
+  { front: '«extend» (UML)', back: 'Valgfri utvidelse av en use case; utvidelsen skjer bare under visse betingelser', topic: 'uml' },
+  { front: 'Domenemodell', back: 'Statisk bilde av konsepter, attributter og relasjoner innenfor et domene', topic: 'uml' },
+  { front: 'Sekvensdiagram', back: 'Diagram som viser dynamisk samhandling mellom klasser/aktører over tid med meldinger som piler', topic: 'uml' },
+  { front: 'Aktivitetsdiagram', back: 'Grafisk bilde av en arbeidsflyt med aktiviteter, beslutningspunkter og parallelle flyter', topic: 'uml' },
+  { front: 'Livslinje (UML)', back: 'Vertikal stiplet linje i sekvensdiagram som representerer en deltaker', topic: 'uml' },
+  { front: 'Beslutningsnode', back: 'Diamantform i aktivitetsdiagram med alternative grener (ja/nei)', topic: 'uml' },
+  { front: 'Fork/Join (UML)', back: 'Tykk horisontal linje i aktivitetsdiagram som markerer start/slutt av parallelle aktiviteter', topic: 'uml' },
+
+  // Bærekraft
+  { front: 'SusAF', back: 'Sustainability Awareness Framework; rammeverk for å identifisere bærekraftseffekter av systemer', topic: 'baerekraft' },
+  { front: 'SusAD', back: 'Sustainability Awareness Diagram; visuelt verktøy med fem sammenkoblede bærekraftsdimensjoner', topic: 'baerekraft' },
+  { front: 'SDG', back: 'FNs 17 Sustainable Development Goals; universell handlingsplan vedtatt av alle FNs medlemsland', topic: 'baerekraft' },
+  { front: 'Brundtland-definisjonen', back: '«Møte nåtidens behov uten å kompromittere fremtidige generasjoners evne til å møte sine behov»', topic: 'baerekraft' },
+  { front: 'Umiddelbar effekt', back: 'Direkte effekt av løsningens produksjon, bruk eller avhending (f.eks. energiforbruk under drift)', topic: 'baerekraft' },
+  { front: 'Muliggjørende effekt', back: 'Effekt som oppstår over tid når løsningen tas i bruk (f.eks. endring av reisemønstre)', topic: 'baerekraft' },
+  { front: 'Systemisk effekt', back: 'Vedvarende endring i samfunnet eller markedet observert over tid (f.eks. sosiale mediers påvirkning)', topic: 'baerekraft' },
+  { front: 'Individuell dimensjon (SusAD)', back: 'Individets evne til å trives: helse, livslangt lærling, personvern, sikkerhet og selvbestemmelse', topic: 'baerekraft' },
+  { front: 'Teknisk dimensjon (SusAD)', back: 'Systemets evne til å vedlikeholdes og forbedres: vedlikeholdbarhet, utvidbarhet, skalerbarhet og sikkerhet', topic: 'baerekraft' },
+  { front: 'Miljømessig dimensjon (SusAD)', back: 'Bruk og forvaltning av naturressurser, energi, forurensning og biologisk mangfold', topic: 'baerekraft' },
+
+  // Scrum (utfyllende begreper)
+  { front: 'Development Team', back: 'Tverrfaglig, selvorganiserende team (5–9 pers) som designer, koder og tester i Scrum', topic: 'scrum' },
+  { front: 'Sprint Retrospective', back: 'Scrum-seremoni kun for development team; reflekterer over prosessen – hva gikk bra/dårlig?', topic: 'scrum' },
+  { front: 'Sprint Planning', back: 'Møte der PO og team velger oppgaver fra product backlog og setter sprint-mål', topic: 'scrum' },
+  { front: 'Inkrement', back: 'Det ferdige, potensielt leveringsdyktige produktet ved slutten av en sprint', topic: 'scrum' },
+  { front: 'Impediment', back: 'Hindring Scrum Master skal fjerne for å hjelpe development team til å jobbe effektivt', topic: 'scrum' },
+  { front: 'Sprint-mål', back: 'Kortfattet beskrivelse av hva teamet skal oppnå i sprinten; settes under Sprint Planning', topic: 'scrum' },
+  { front: 'Backlog refinement', back: 'Løpende prosess der PO oppdaterer, estimerer og prioriterer product backlog', topic: 'scrum' },
+
+  // Kanban (utfyllende begreper)
+  { front: 'Flaskehals (Kanban)', back: 'Punkt i arbeidsflyten der oppgaver hoper seg opp; synliggjøres når en kolonne nærmer seg WIP-grensen', topic: 'kanban' },
+  { front: 'Pull-system', back: 'Teammedlemmer trekker (pull) oppgaver etter kapasitet, fremfor å få dem tildelt (push)', topic: 'kanban' },
+  { front: 'Gjennomløpstid', back: 'Tid fra en oppgave starter til den er ferdig (lead time); reduseres med WIP-grenser', topic: 'kanban' },
+  { front: 'Kontinuerlig leveranse (Kanban)', back: 'Releaser skjer når en oppgave er ferdig – ikke ved fast sprint-slutt', topic: 'kanban' },
+  { front: 'Kanban-board', back: 'Visuell oversikt over arbeidsflyt med kolonner: To Do, In Progress, Review og Done', topic: 'kanban' },
+  { front: 'Multitasking-problematikk', back: 'Å jobbe med for mange oppgaver samtidig fører til kontekst-bytte og redusert kvalitet; løses med WIP-grenser', topic: 'kanban' },
 ];
 
 let matchActiveTopic = 'all';

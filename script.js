@@ -606,5 +606,332 @@ const allQuestions = [
             "TDD og BDD brukes utelukkende for rene backend-systemer; de egner seg ikke for frontend eller ende-til-ende-testing"
         ],
         correct: 1
+    },
+
+    // UML
+    {
+        topic: 'uml',
+        question: "Hva viser et use case-diagram?",
+        options: [
+            "Hvem gjør hva med et system – relasjoner mellom aktører og bruksscenarioer",
+            "Systemets dataflyt og minnebruk under kjøring",
+            "Den statiske strukturen av klasser og attributter i domenet",
+            "Rekkefølgen på SQL-spørringer mot databasen"
+        ],
+        correct: 0
+    },
+    {
+        topic: 'uml',
+        question: "Hva er forskjellen på «include» og «extend» i use case-diagrammer?",
+        options: [
+            "«include» og «extend» er synonyme begreper som begge beskriver valgfrie koblinger",
+            "«include» betyr alltid obligatorisk avhengighet; «extend» betyr valgfri utvidelse som skjer under visse betingelser",
+            "«include» er for eksterne aktører; «extend» er for interne systemer",
+            "«include» brukes kun på domenemodeller; «extend» kun på sekvensdiagrammer"
+        ],
+        correct: 1
+    },
+    {
+        topic: 'uml',
+        question: "Hva viser en domenemodell?",
+        options: [
+            "Dynamisk interaksjon mellom aktører og klasser over tid",
+            "Arbeidsflyt med parallelle og betingede steg",
+            "Statisk bilde av konsepter, attributter og relasjoner innenfor et domene",
+            "Hvilke funksjoner systemet tilbyr til brukerne"
+        ],
+        correct: 2
+    },
+    {
+        topic: 'uml',
+        question: "Hva viser et sekvensdiagram?",
+        options: [
+            "Statisk oversikt over klasser og deres arveforhold",
+            "Arbeidsflyt med beslutningspunkter og parallelle aktiviteter",
+            "Hvem som kan bruke systemet og hvilke use cases som finnes",
+            "Dynamisk samhandling mellom klasser/aktører over tid, med meldinger som piler"
+        ],
+        correct: 3
+    },
+    {
+        topic: 'uml',
+        question: "Hva er en aktør i et use case-diagram?",
+        options: [
+            "En funksjon eller tjeneste systemet tilbyr, tegnet som en oval",
+            "En person eller ekstern entitet som bruker systemet, tegnet som en strekfigur",
+            "En intern klasse som håndterer forretningslogikk",
+            "Et datalagringsformat for persistente objekter"
+        ],
+        correct: 1
+    },
+    {
+        topic: 'uml',
+        question: "Hva viser et aktivitetsdiagram?",
+        options: [
+            "En oversikt over alle aktører og deres tilgangsrettigheter",
+            "Statisk struktur av klasser og relasjoner i domenet",
+            "Et grafisk bilde av en arbeidsflyt med aktiviteter, beslutningspunkter og parallelle flyter",
+            "Sekvens av nettverkskall mellom klient og tjener"
+        ],
+        correct: 2
+    },
+    {
+        topic: 'uml',
+        question: "Hva er en «Fork/Join» i et aktivitetsdiagram?",
+        options: [
+            "En beslutningsnode med to alternative grener (ja/nei)",
+            "En tykk horisontal linje som representerer start/slutt av parallelle aktiviteter",
+            "En piltype som viser synkrone kall i sekvensdiagrammer",
+            "En startnode representert som en fylt sirkel"
+        ],
+        correct: 1
+    },
+    {
+        topic: 'uml',
+        question: "Hvordan utfyller use case-diagrammet og domenemodellen hverandre?",
+        options: [
+            "De er identiske – begge beskriver funksjonelle krav",
+            "Use case brukes i sluttfasen; domenemodellen i oppstartsfasen",
+            "Use case viser dynamikk (hvem gjør hva); domenemodellen viser statisk struktur – til sammen gir de dynamikk + struktur",
+            "Domenemodellen erstatter use case i moderne smidig utvikling"
+        ],
+        correct: 2
+    },
+
+    // Bærekraft
+    {
+        topic: 'baerekraft',
+        question: "Hva er Brundtland-kommisjonens definisjon av bærekraft?",
+        options: [
+            "Utvikling som gir maksimal vekst uten å øke energiforbruk",
+            "Utvikling som møter behovene til nåtidens generasjoner uten å kompromittere evnen til fremtidige generasjoner til å møte sine egne behov",
+            "Utvikling som eliminerer alle CO₂-utslipp fra IKT-sektoren innen 2030",
+            "Utvikling som sikrer teknologisk innovasjon på tvers av generasjoner"
+        ],
+        correct: 1
+    },
+    {
+        topic: 'baerekraft',
+        question: "Hva er SusAF (Sustainability Awareness Framework)?",
+        options: [
+            "En ISO-standard for sikkerhetssertifisering av programvaresystemer",
+            "Et rammeverk for å identifisere og analysere bærekraftseffekter av systemer, tjenester og applikasjoner",
+            "En GDPR-basert sertifiseringsordning for miljøvennlig databehandling",
+            "FNs globale rammeverk for bærekraftig teknologipolitikk"
+        ],
+        correct: 1
+    },
+    {
+        topic: 'baerekraft',
+        question: "Hva er SusAD (Sustainability Awareness Diagram)?",
+        options: [
+            "En tidslinje for implementering av bærekraftsmål i et prosjekt",
+            "En UML-diagramtype for å modellere energiforbruk",
+            "Et visuelt verktøy som fremstiller fem sammenkoblede bærekraftsdimensjoner og effektene mellom dem",
+            "Et risikomatrise for miljøpåvirkning fra programvaresystemer"
+        ],
+        correct: 2
+    },
+    {
+        topic: 'baerekraft',
+        question: "Hva er de fem SusAD-dimensjonene?",
+        options: [
+            "Miljø, Økonomi, Teknologi, Lovverk, Kultur",
+            "Individuell, Sosial, Økonomisk, Miljømessig, Teknisk",
+            "Helse, Utdanning, Energi, Transport, Digitalisering",
+            "Kortsiktig, Langsiktig, Global, Lokal, Personlig"
+        ],
+        correct: 1
+    },
+    {
+        topic: 'baerekraft',
+        question: "Hva menes med «Muliggjørende effekter» (Enabling effects) i SusAD?",
+        options: [
+            "De direkte effektene av løsningens produksjon og energiforbruk under drift",
+            "Vedvarende endringer som observeres over lang tid i samfunnet",
+            "Effekter som oppstår over tid ved at løsningen tas i bruk, f.eks. endring av reisemønstre fra et navigasjonssystem",
+            "Positive bivirkninger av teknologisk innovasjon"
+        ],
+        correct: 2
+    },
+    {
+        topic: 'baerekraft',
+        question: "Hva menes med «Systemiske effekter» (Systemic effects) i SusAD?",
+        options: [
+            "Tekniske effekter på selve systemets kodebase og arkitektur",
+            "Effekter som oppstår i overgangen mellom to systemversjoner",
+            "De direkte effektene av energiforbruk under produksjon",
+            "Vedvarende endringer i samfunnet eller markedet over tid, f.eks. sosiale mediers påvirkning på demokrati"
+        ],
+        correct: 3
+    },
+    {
+        topic: 'baerekraft',
+        question: "Hvordan integreres SusAF i Scrum-prosessen?",
+        options: [
+            "SusAF erstatter Sprint Retrospective og brukes som avsluttende møte i prosjektet",
+            "SusAF-analysen gjennomføres ved kickoff; bærekraftskrav tas inn som backlog-items; Sprint Retrospective inkluderer en «Sustainability Review»",
+            "SusAF integreres kun i release-fasen som en siste sjekk før produksjonssetting",
+            "SusAF er uforenlig med Scrum og brukes kun i tradisjonell fossefallsutvikling"
+        ],
+        correct: 1
+    },
+    {
+        topic: 'baerekraft',
+        question: "Hva er FNs 17 bærekraftsmål (SDGs)?",
+        options: [
+            "EUs regelverk for teknologiselskaper om å redusere CO₂-avtrykk",
+            "En universell handlingsplan vedtatt av alle FNs medlemsland som programvareutvikling kan bidra til eller motvirke",
+            "NITOs 17 etiske retningslinjer for bærekraftig systemutvikling",
+            "En sertifiseringsordning for bærekraftige programvareprosjekter"
+        ],
+        correct: 1
+    },
+
+    // Scrum
+    {
+        topic: 'scrum',
+        question: "Hva er rollen til Product Owner (PO) i Scrum?",
+        options: [
+            "Skriver all kode og tester den ferdig",
+            "Fasiliterer møter og sikrer at Scrum-prosessen følges",
+            "Eier og prioriterer product backlog; representerer kundens interesser; definerer hva som skal bygges og i hvilken rekkefølge",
+            "Drifter systemet i produksjon etter at sprinten er ferdig"
+        ],
+        correct: 2
+    },
+    {
+        topic: 'scrum',
+        question: "Hva skjer i en Daily Standup (Daily Scrum)?",
+        options: [
+            "Teamet planlegger oppgavene for neste sprint",
+            "PO demonstrerer ferdig inkrement for interessenter",
+            "15 minutters daglig møte; tre spørsmål: Hva gjorde jeg i går? Hva gjør jeg i dag? Er det noe som hindrer meg?",
+            "Teamet reflekterer over prosessen fra forrige sprint"
+        ],
+        correct: 2
+    },
+    {
+        topic: 'scrum',
+        question: "Hva er et Inkrement i Scrum?",
+        options: [
+            "Den samlede product backlog for hele prosjektet",
+            "Det ferdige, potensielt leveringsdyktige produktet ved slutten av sprinten som møter «Definition of Done»",
+            "En enkeltoppgave som er plukket ut fra sprint backlog",
+            "Mengden arbeid teamet estimerer å gjennomføre per dag"
+        ],
+        correct: 1
+    },
+    {
+        topic: 'scrum',
+        question: "Hvem deltar i Sprint Retrospective, og hva er formålet?",
+        options: [
+            "Hele teamet og kunden; formål: evaluere produktleveransen",
+            "Kun Development Team og Scrum Master; formål: reflektere over prosessen og identifisere forbedringer til neste sprint",
+            "PO og Scrum Master; formål: oppdatere product backlog for neste sprint",
+            "Alle interessenter; formål: godkjenne produktinkrementet"
+        ],
+        correct: 1
+    },
+    {
+        topic: 'scrum',
+        question: "Hva kjennetegner Sprint Backlog i Scrum?",
+        options: [
+            "En prioritert liste over all ønsket funksjonalitet i produktet; eies av PO",
+            "Et møtedokument som oppsummerer hva teamet har levert",
+            "Undersettet av product backlog valgt inn i sprinten; kan ikke endres midt i sprint",
+            "En rapport om teamets velocity og estimater for neste kvartal"
+        ],
+        correct: 2
+    },
+    {
+        topic: 'scrum',
+        question: "Hva er Sprint Planning?",
+        options: [
+            "Et møte der PO og Development Team velger oppgaver fra product backlog til sprint backlog og setter sprint-mål",
+            "Et daglig 15-minutters møte der teamet synkroniserer fremdriften",
+            "Et møte der teamet demonstrerer det ferdige inkrementet for kunden",
+            "En prosess for å estimere kostnader og tid for hele prosjektet"
+        ],
+        correct: 0
+    },
+    {
+        topic: 'scrum',
+        question: "Hva er Scrum Masters rolle?",
+        options: [
+            "Prosjektlederen som fordeler oppgaver og styrer teamet",
+            "Representant for kunden som prioriterer hva som skal bygges",
+            "Fasilitator og coach; fjerner hindringer; sikrer at Scrum-prosessen følges; skjermer teamet fra forstyrrelser",
+            "Den tekniske arkitekten som tar alle tekniske beslutninger"
+        ],
+        correct: 2
+    },
+
+    // Kanban
+    {
+        topic: 'kanban',
+        question: "Hva er et Kanban-board?",
+        options: [
+            "Et digitalt prosjektstyringsverktøy utelukkende for testing og feilrapportering",
+            "En visuell oversikt over arbeidsflyten med kolonner som representerer ulike tilstander en oppgave kan være i",
+            "En graf over teamets velocity per sprint",
+            "En tabell over brukerhistorier og estimater"
+        ],
+        correct: 1
+    },
+    {
+        topic: 'kanban',
+        question: "Hva er hensikten med WIP-grenser (Work In Progress-grenser)?",
+        options: [
+            "Å øke antall parallelle oppgaver teamet kan jobbe med",
+            "Å fastsette budsjett for antall brukerhistorier per kvartal",
+            "Å begrense antall aktive oppgaver per kolonne for å avdekke flaskehalser og øke fokus",
+            "Å telle antall ferdige oppgaver per dag"
+        ],
+        correct: 2
+    },
+    {
+        topic: 'kanban',
+        question: "Hva er en flaskehals i Kanban?",
+        options: [
+            "En feil i koden som blokkerer videre utvikling",
+            "Et punkt i arbeidsflyten der oppgaver hoper seg opp fordi en kolonne nærmer seg WIP-grensen",
+            "En for lang sprint som fører til planleggingsproblemer",
+            "Et uklart krav i product backlog"
+        ],
+        correct: 1
+    },
+    {
+        topic: 'kanban',
+        question: "Hva kjennetegner leveranse i Kanban sammenlignet med Scrum?",
+        options: [
+            "Kanban leverer kun én gang i kvartalet; Scrum leverer ved slutten av hver sprint",
+            "Kanban og Scrum leverer begge ved slutten av en fast iterasjon",
+            "Kanban leverer kontinuerlig når noe er ferdig; Scrum leverer ved slutten av en sprint",
+            "Kanban krever godkjenning fra PO før leveranse; Scrum gjør det ikke"
+        ],
+        correct: 2
+    },
+    {
+        topic: 'kanban',
+        question: "Hva skiller Kanban fra Scrum med tanke på roller?",
+        options: [
+            "Kanban har flere obligatoriske roller enn Scrum",
+            "Kanban har ingen pålagte roller; Scrum har faste roller (PO, SM, Dev Team)",
+            "Begge metodene har identiske roller",
+            "Kanban krever en produkteier; Scrum gjør det ikke"
+        ],
+        correct: 1
+    },
+    {
+        topic: 'kanban',
+        question: "Når passer Kanban best?",
+        options: [
+            "Når teamet starter fra scratch og trenger klar struktur",
+            "Når det er klare leveransefrister og en definert produktbacklog",
+            "Ved kontinuerlig drift, support og bug-fixing med oppgaver av varierende størrelse og prioritet",
+            "Kun for store team med mer enn 20 personer"
+        ],
+        correct: 2
     }
 ];
