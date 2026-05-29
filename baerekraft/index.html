@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/style.css">
+  <title>Bærekraft & Systemutvikling – Systemutvikling</title>
+  <script>!function(){var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);else if(window.matchMedia("(prefers-color-scheme: dark)").matches)document.documentElement.setAttribute("data-theme","dark")}();</script>
+</head>
+<body style="--accent: var(--c-baerekraft)">
+
+<header id="site-header"></header>
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <div class="breadcrumb">
+      <a href="/">Hjem</a>
+      <span class="breadcrumb-sep">/</span>
+      <a href="/teori/">Teori</a>
+      <span class="breadcrumb-sep">/</span>
+      <span>Bærekraft</span>
+    </div>
+    <div class="topic-tag">🌱 IDATG1005 · Workshop 2025</div>
+    <h1>Bærekraft & Systemutvikling</h1>
+    <p class="lead">Programvareutviklere har ansvar for bærekraftig utvikling. Dekker definisjoner, FNs bærekraftsmål, SusAF-rammeverket og hvordan bærekraft integreres i smidig utvikling.</p>
+  </div>
+</div>
+
+<div class="two-col">
+
+  <aside class="toc">
+    <p class="toc-title">Innhold</p>
+    <ul class="toc-list">
+      <li><a href="#hva-er">Hva er bærekraft?</a></li>
+      <li><a href="#sdg">FNs bærekraftsmål (SDGs)</a></li>
+      <li><a href="#susaf">SusAF-rammeverket</a></li>
+      <li><a href="#dimensjoner">5 dimensjoner</a></li>
+      <li><a href="#effekter">Ordrer av effekter</a></li>
+      <li><a href="#agile">Bærekraft i smidig utvikling</a></li>
+    </ul>
+  </aside>
+
+  <article class="article">
+
+    <section id="hva-er">
+      <h2>Hva er bærekraft?</h2>
+      <p>Bærekraft er definert av Brundtland-kommisjonen som:</p>
+      <div class="callout callout-important">
+        <strong>Definisjon</strong>
+        "Utvikling som møter behovene til nåtidens generasjoner uten å kompromittere evnen til fremtidige generasjoner til å møte sine egne behov."
+      </div>
+
+      <p>For programvareutvikling betyr dette at teknologien vi lager kan ha både <strong>positive og negative</strong> konsekvenser for samfunnet og miljøet:</p>
+      <div class="pros-cons">
+        <div class="pros">
+          <h4>Muligheter (+)</h4>
+          <ul>
+            <li>Digitalisering og effektivisering</li>
+            <li>Økonomisk transformasjon</li>
+            <li>Sosial likestilling</li>
+            <li>Individuelt velvære</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>Risikoer (−)</h4>
+          <ul>
+            <li>CO₂-utslipp fra datasentre og enheter</li>
+            <li>Ressursuttømming</li>
+            <li>Sosiale ulikheter</li>
+            <li>Overvåking og personvern</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="sdg">
+      <h2>FNs bærekraftsmål (SDGs)</h2>
+      <p>FNs 17 bærekraftsmål (Sustainable Development Goals) er en universell handlingsplan vedtatt av alle FNs medlemsland. Programvareutvikling kan bidra til – eller motvirke – disse målene.</p>
+      <div class="callout callout-tip">
+        <strong>Eksempler på kobling til SDGs</strong>
+        Et system som støtter betalingsløsninger kan bidra til SDG 1 (Utrydde fattigdom) og SDG 8 (Anstendig arbeid). Et system som samler inn unødvendige persondata kan motvirke SDG 16 (Fred, rettferdighet, sterke institusjoner).
+      </div>
+    </section>
+
+    <section id="susaf">
+      <h2>SusAF – Sustainability Awareness Framework</h2>
+      <p>SusAF (Sustainability Awareness Framework) er et rammeverk for å identifisere og analysere bærekraftseffekter av systemer, tjenester og applikasjoner. Det hjelper utviklingsteam å stille de riktige spørsmålene tidlig i prosessen.</p>
+
+      <p>Kjernen i SusAF er <strong>SusAD</strong> (Sustainability Awareness Diagram) – et visuelt verktøy som fremstiller fem sammenkoblede dimensjoner. Effektene av en løsning identifiseres innenfor disse dimensjonene, og koblinger mellom effektene kartlegges.</p>
+
+      <div class="callout">
+        <strong>Effektene kan være positive eller negative</strong>
+        SusAF hjelper teamet å se at et valg i én dimensjon kan ha konsekvenser i en annen – f.eks. at et energieffektivt design (miljø) også kan redusere kostnader (økonomi).
+      </div>
+    </section>
+
+    <section id="dimensjoner">
+      <h2>SusAD – 5 bærekraftsdimensjoner</h2>
+      <p>SusAD beskriver fem dimensjoner som må vurderes for å forstå bærekraft i en bred forstand:</p>
+
+      <div class="term-grid">
+        <dl class="term-card">
+          <dt>Individuell</dt>
+          <dd>Individets evne til å trives og utvikle seg. Helse, livslangt lærling, personvern, sikkerhet og selvbestemmelse (agency).</dd>
+        </dl>
+        <dl class="term-card">
+          <dt>Sosial</dt>
+          <dd>Relasjoner mellom individer og grupper. Fellesskapsfølelse, tillit, inkludering og mangfold, likhet og rettferdighet.</dd>
+        </dl>
+        <dl class="term-card">
+          <dt>Økonomisk</dt>
+          <dd>Finansiell side og forretningsverdi. Verdiskaping, kunderelasjoner, forsyningskjeder og innovasjon (R&D).</dd>
+        </dl>
+        <dl class="term-card">
+          <dt>Miljømessig</dt>
+          <dd>Bruk og forvaltning av naturressurser. Materialer og ressurser, forurensning, biologisk mangfold og energi.</dd>
+        </dl>
+        <dl class="term-card">
+          <dt>Teknisk</dt>
+          <dd>Systemets evne til å vedlikeholdes og forbedres over tid. Vedlikeholdbarhet, brukbarhet, utvidbarhet, sikkerhet og skalerbarhet.</dd>
+        </dl>
+      </div>
+    </section>
+
+    <section id="effekter">
+      <h2>Ordrer av effekter</h2>
+      <p>SusAD skiller mellom tre typer effekter en løsning kan ha:</p>
+
+      <ol class="steps">
+        <li class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h4>Umiddelbare (Immediate)</h4>
+            <p>De direkte effektene av løsningens produksjon, bruk eller avhending. F.eks. energiforbruk under drift.</p>
+          </div>
+        </li>
+        <li class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h4>Muliggjørende (Enabling)</h4>
+            <p>Effekter som oppstår over tid ved at løsningen tas i bruk. F.eks. et navigasjonssystem som over tid endrer reisemønstre.</p>
+          </div>
+        </li>
+        <li class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h4>Systemiske (Systemic/Structural)</h4>
+            <p>Vedvarende endringer som observeres over tid i samfunnet eller markedet. F.eks. sosiale mediers påvirkning på demokrati.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section id="agile">
+      <h2>Bærekraft i smidig utvikling</h2>
+      <p>Det Smidige Manifesto samsvarer godt med bærekraftsmål: iterative metoder gir rask respons på nye bærekraftskrav, og korte feedback-løkker lar teamet jevnlig vurdere effekter.</p>
+
+      <h3>SusAF i Scrum-prosessen</h3>
+      <p>SusAF kan integreres direkte i Scrum-prosessen:</p>
+      <ul>
+        <li><strong>Kickoff</strong> – identifiser bærekraftsvinkler og brukerhistorier med bærekraftsperspektiv</li>
+        <li><strong>SusAF-analyse</strong> – kartlegg bærekraftseffekter og dimensjoner</li>
+        <li><strong>Product Backlog</strong> – ta inn bærekraftskrav som egne backlog-items</li>
+        <li><strong>Sprint Retrospective</strong> – inkluder en «Sustainability Review» der teamet reflekterer over bærekraftseffekter av det som ble levert</li>
+      </ul>
+
+      <div class="callout callout-tip">
+        <strong>Agile Sustainability Manifesto</strong>
+        Agile Alliance har lansert et eget "Agile Sustainability Manifesto" som oppfordrer utviklingsteam til å inkorporere bærekraftige praksiser, svare på globale utfordringer, samarbeide med mangfoldige interessenter og innovere for samfunns- og miljøvelvære.
+      </div>
+    </section>
+
+  </article>
+</div>
+
+<section class="quiz-cta">
+  <h2>Test bærekraft-kunnskapen din</h2>
+  <p>Øv på spørsmål om bærekraft, SDGs og SusAF.</p>
+  <a href="/quiz/" class="btn btn-primary">Gå til quiz →</a>
+</section>
+
+<div id="site-footer"></div>
+<script src="/nav.js"></script>
+</body>
+</html>

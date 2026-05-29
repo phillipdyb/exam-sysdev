@@ -21,7 +21,7 @@
       <span class="breadcrumb-sep">/</span>
       <span>Testing</span>
     </div>
-    <div class="topic-tag">✅ Oppgave 3 på eksamen</div>
+    <div class="topic-tag">✅ Oppgave 3 · Eksamen 2023</div>
     <h1>Testing</h1>
     <p class="lead">Testing validerer at programvaren oppfører seg som forventet. Dekker testpyramiden, testtyper, TDD, BDD, kontinuerlig integrasjon og ytelsestesting.</p>
   </div>
@@ -49,6 +49,10 @@
 
     <section id="hvorfor">
       <h2>Hvorfor teste?</h2>
+      <div class="callout">
+        <strong>Eksamensfokus</strong>
+        Oppgave 3 på eksamen (2023) handlet om forskjellen mellom enhetstesting og integrasjonstesting, og testdrevet utvikling (TDD). Kjenn disse godt.
+      </div>
       <p>Vi tester programvare for å validere at systemet:</p>
       <ul>
         <li>Responderer riktig ved interaksjon/input</li>
@@ -114,8 +118,16 @@
           <dd>Ustrukturert manuell testing der testeren utforsker systemet kreativt. Finner uventede bugs.</dd>
         </dl>
         <dl class="term-card">
+          <dt>Destruktiv testing</dt>
+          <dd>Kreativ, utforskende testing der man aktivt prøver å få systemet til å feile. Kan ikke automatiseres – krever menneskelig kreativitet og erfaring.</dd>
+        </dl>
+        <dl class="term-card">
+          <dt>Usability testing</dt>
+          <dd>Tester om systemet oppfyller brukerens behov: Har vi laget det brukeren egentlig ønsker? Fungerer brukergrensesnittet?</dd>
+        </dl>
+        <dl class="term-card">
           <dt>Ytelsestesting</dt>
-          <dd>Tester systemets ytelse under last. Undertyper: last-, stress- og spike-test.</dd>
+          <dd>Tester systemets ytelse under last. Undertyper: last-, stress-, spike- og utholdenhetstest.</dd>
         </dl>
       </div>
     </section>
@@ -288,6 +300,10 @@ Then [forventet resultat]
         <dl class="term-card">
           <dt>Spike-test</dt>
           <dd>Tester plutselig, kortvarig last – f.eks. ved populær ticketlansering. Finner hvordan systemet reagerer på unormale topper.</dd>
+        </dl>
+        <dl class="term-card">
+          <dt>Utholdenhetstest (Stabilitetstest)</dt>
+          <dd>Tester jevn, vedvarende last over lang tid. Avslører minnelekkasjer, stigende CPU-bruk og degradering av ytelse over tid.</dd>
         </dl>
       </div>
 

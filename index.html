@@ -29,23 +29,67 @@
     </div>
   </section>
 
+  <!-- Exam Countdown -->
+  <div class="exam-countdown" id="examCountdown">
+    <div class="countdown-inner">
+      <span class="countdown-label">Eksamen om</span>
+      <div class="countdown-units">
+        <div class="countdown-unit"><span class="countdown-num" id="cdDays">--</span><span class="countdown-unit-label">dager</span></div>
+        <div class="countdown-sep">:</div>
+        <div class="countdown-unit"><span class="countdown-num" id="cdHours">--</span><span class="countdown-unit-label">timer</span></div>
+        <div class="countdown-sep">:</div>
+        <div class="countdown-unit"><span class="countdown-num" id="cdMins">--</span><span class="countdown-unit-label">min</span></div>
+        <div class="countdown-sep">:</div>
+        <div class="countdown-unit"><span class="countdown-num" id="cdSecs">--</span><span class="countdown-unit-label">sek</span></div>
+      </div>
+      <span class="countdown-date">03.06.2026 · 09:00</span>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const examTime = new Date('2026-06-03T09:00:00+02:00');
+      function tick() {
+        const diff = examTime - Date.now();
+        if (diff <= 0) {
+          document.getElementById('examCountdown').innerHTML =
+            '<div class="countdown-inner"><span class="countdown-label" style="font-size:1.2rem">🎓 Lykke til på eksamen!</span></div>';
+          return;
+        }
+        const d = Math.floor(diff / 86400000);
+        const h = Math.floor((diff % 86400000) / 3600000);
+        const m = Math.floor((diff % 3600000) / 60000);
+        const s = Math.floor((diff % 60000) / 1000);
+        document.getElementById('cdDays').textContent = String(d).padStart(2, '0');
+        document.getElementById('cdHours').textContent = String(h).padStart(2, '0');
+        document.getElementById('cdMins').textContent = String(m).padStart(2, '0');
+        document.getElementById('cdSecs').textContent = String(s).padStart(2, '0');
+        setTimeout(tick, 1000);
+      }
+      tick();
+    })();
+  </script>
+
   <!-- Stats -->
   <div class="stats-bar">
     <div class="stats-inner">
       <div class="stat">
-        <span class="stat-num">50</span>
+        <span class="stat-num">55</span>
         <span class="stat-label">Quiz-spørsmål</span>
       </div>
       <div class="stat">
-        <span class="stat-num">6</span>
+        <span class="stat-num">75</span>
+        <span class="stat-label">Flashkort</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">75</span>
+        <span class="stat-label">Match-par</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">7</span>
         <span class="stat-label">Temaer</span>
       </div>
       <div class="stat">
-        <span class="stat-num">5</span>
-        <span class="stat-label">Eksamensoppgaver</span>
-      </div>
-      <div class="stat">
-        <span class="stat-num">2023</span>
+        <span class="stat-num">2026</span>
         <span class="stat-label">Eksamensår</span>
       </div>
     </div>
@@ -65,7 +109,7 @@
           <h3>MMI & Interaksjonsdesign</h3>
           <p>Don Normans 6 designprinsipper, interaksjonsdesignprosessen, prototyping og universell utforming (WCAG).</p>
           <div class="topic-card-meta">
-            <span>Oppgave 5 på eksamen</span>
+            <span>Oppgave 5 · Eksamen 2023</span>
             <span class="topic-card-arrow">→</span>
           </div>
         </a>
@@ -75,7 +119,7 @@
           <h3>Utviklingsmetodikk</h3>
           <p>Agile Manifesto, Scrum, Kanban og Lean. Smidig utvikling med sprinter, WIP-grenser og kontinuerlig forbedring.</p>
           <div class="topic-card-meta">
-            <span>Oppgave 1 på eksamen</span>
+            <span>Oppgave 1 · Eksamen 2023</span>
             <span class="topic-card-arrow">→</span>
           </div>
         </a>
@@ -85,7 +129,7 @@
           <h3>Programvarearkitektur</h3>
           <p>Arkitekturmønstre som Microservices, MVC og tre-lags arkitektur. Høy styrke og lave koblinger.</p>
           <div class="topic-card-meta">
-            <span>Oppgave 2 på eksamen</span>
+            <span>Oppgave 2 · Eksamen 2023</span>
             <span class="topic-card-arrow">→</span>
           </div>
         </a>
@@ -95,7 +139,7 @@
           <h3>Testing</h3>
           <p>Enhetstesting, integrasjonstesting, TDD, BDD, testpyramiden og kontinuerlig integrasjon (CI/CD).</p>
           <div class="topic-card-meta">
-            <span>Oppgave 3 på eksamen</span>
+            <span>Oppgave 3 · Eksamen 2023</span>
             <span class="topic-card-arrow">→</span>
           </div>
         </a>
@@ -116,6 +160,16 @@
           <p>Use case-diagrammer, domenemodell, sekvensdiagrammer og aktivitetsdiagrammer i UML.</p>
           <div class="topic-card-meta">
             <span>Modellering & design</span>
+            <span class="topic-card-arrow">→</span>
+          </div>
+        </a>
+
+        <a href="/baerekraft/" class="topic-card" style="--accent: var(--c-baerekraft)">
+          <div class="topic-card-icon">🌱</div>
+          <h3>Bærekraft & Systemutvikling</h3>
+          <p>FNs bærekraftsmål, SusAF-rammeverket, de 5 dimensjonene og bærekraft i smidig utvikling.</p>
+          <div class="topic-card-meta">
+            <span>IDATG1005 · Workshop 2025</span>
             <span class="topic-card-arrow">→</span>
           </div>
         </a>

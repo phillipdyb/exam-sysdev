@@ -34,6 +34,7 @@
   --c-etikk: #dc2626;
   --c-uml: #db2777;
   --c-prosjekt: #9333ea;
+  --c-baerekraft: #15803d;
 }
 
 [data-theme="dark"] {
@@ -380,6 +381,75 @@ img { max-width: 100%; height: auto; display: block; }
   gap: 1rem;
   justify-content: center;
   flex-wrap: wrap;
+}
+
+/* ========================================
+   EXAM COUNTDOWN
+   ======================================== */
+
+.exam-countdown {
+  background: linear-gradient(135deg, #1e3a5f 0%, #0f2744 100%);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  padding: 1rem 1.5rem;
+}
+
+.countdown-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.countdown-label {
+  color: #93c5fd;
+  font-size: .8rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.countdown-date {
+  color: #64748b;
+  font-size: .78rem;
+}
+
+.countdown-units {
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+}
+
+.countdown-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 3rem;
+}
+
+.countdown-num {
+  font-size: 1.75rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+  color: #f1f5f9;
+}
+
+.countdown-unit-label {
+  font-size: .65rem;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  margin-top: .15rem;
+}
+
+.countdown-sep {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #334155;
+  padding-bottom: .8rem;
 }
 
 /* ========================================
