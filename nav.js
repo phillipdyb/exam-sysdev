@@ -15,13 +15,20 @@ const NAV_HTML = `
   <div class="nav-inner">
     <a href="/" class="nav-logo">Sysdev<span>.</span></a>
     <ul class="nav-links" id="navLinks">
-      <li><a href="/teori/">Teori</a></li>
-      <li><a href="/mmi/">MMI</a></li>
-      <li><a href="/metodikk/">Metodikk</a></li>
-      <li><a href="/arkitektur/">Arkitektur</a></li>
-      <li><a href="/testing/">Testing</a></li>
-      <li><a href="/etikk/">Etikk</a></li>
-      <li><a href="/quiz/" class="nav-quiz-btn">Quiz →</a></li>
+      <li class="nav-dropdown">
+        <a href="/teori/" class="nav-dropdown-trigger">Teori <span class="nav-chevron">▾</span></a>
+        <ul class="nav-dropdown-menu">
+          <li><a href="/mmi/">MMI & IxD</a></li>
+          <li><a href="/metodikk/">Metodikk</a></li>
+          <li><a href="/arkitektur/">Arkitektur</a></li>
+          <li><a href="/testing/">Testing</a></li>
+          <li><a href="/etikk/">Etikk</a></li>
+        </ul>
+      </li>
+      <li class="nav-sep" aria-hidden="true"></li>
+      <li><a href="/flashkort/" class="nav-practice-btn">Flashkort</a></li>
+      <li><a href="/match/" class="nav-practice-btn">Match</a></li>
+      <li class="nav-quiz-li"><a href="/quiz/" class="nav-quiz-btn">Quiz →</a></li>
     </ul>
     <button class="theme-toggle" id="themeToggle" aria-label="Bytt tema">🌙</button>
     <button class="nav-toggle" id="navToggle" aria-label="Åpne meny">&#9776;</button>
@@ -34,6 +41,8 @@ const FOOTER_HTML = `
   <p>IDATx1005 Systemutvikling &mdash; NTNU &middot;
     <a href="/teori/">Teori</a> &middot;
     <a href="/quiz/">Quiz</a> &middot;
+    <a href="/flashkort/">Flashkort</a> &middot;
+    <a href="/match/">Match</a> &middot;
     <a href="/mmi/">MMI</a> &middot;
     <a href="/metodikk/">Metodikk</a> &middot;
     <a href="/arkitektur/">Arkitektur</a> &middot;
@@ -61,6 +70,62 @@ document.addEventListener('DOMContentLoaded', () => {
       a.classList.add('active');
     }
   });
+
+  // Highlight Teori dropdown trigger when on a sub-topic page
+  const dropdown = document.querySelector('.nav-dropdown');
+  if (dropdown && dropdown.querySelector('.nav-dropdown-menu .active')) {
+    dropdown.querySelector('.nav-dropdown-trigger').classList.add('active');
+  }
+
+  // Chapter navigation — injected on all theory pages
+  const CHAPTERS = [
+    { href: '/teori/',      title: 'Teori-oversikt',    icon: '📚' },
+    { href: '/mmi/',        title: 'MMI & IxD',         icon: '👁️' },
+    { href: '/metodikk/',   title: 'Metodikk',          icon: '⚡' },
+    { href: '/arkitektur/', title: 'Arkitektur',        icon: '🏗️' },
+    { href: '/testing/',    title: 'Testing',           icon: '✅' },
+    { href: '/etikk/',      title: 'Etikk & Personvern', icon: '⚖️' },
+  ];
+
+  const chIdx = CHAPTERS.findIndex(c => path === c.href || path.startsWith(c.href));
+  if (chIdx !== -1) {
+    const prev = chIdx > 0 ? CHAPTERS[chIdx - 1] : null;
+    const next = chIdx < CHAPTERS.length - 1 ? CHAPTERS[chIdx + 1] : null;
+
+    const prevHtml = prev
+      ? `<a href="${prev.href}" class="chapter-btn chapter-btn-prev">
+           <span class="chapter-btn-label">← Forrige</span>
+           <span class="chapter-btn-title">${prev.icon} ${prev.title}</span>
+         </a>`
+      : `<span></span>`;
+
+    const nextHtml = next
+      ? `<a href="${next.href}" class="chapter-btn chapter-btn-next">
+           <span class="chapter-btn-label">Neste →</span>
+           <span class="chapter-btn-title">${next.icon} ${next.title}</span>
+         </a>`
+      : `<a href="/quiz/" class="chapter-btn chapter-btn-next chapter-btn-cta">
+           <span class="chapter-btn-label">Ferdig med teorien? →</span>
+           <span class="chapter-btn-title">🧠 Ta quizen</span>
+         </a>`;
+
+    const posLabel = chIdx === 0
+      ? 'Oversikt'
+      : `Kapittel ${chIdx} av ${CHAPTERS.length - 1}`;
+
+    const chapterNav = document.createElement('nav');
+    chapterNav.className = 'chapter-nav';
+    chapterNav.setAttribute('aria-label', 'Kapitelnavigasjon');
+    chapterNav.innerHTML = `
+      <div class="chapter-nav-inner">
+        ${prevHtml}
+        <span class="chapter-pos">${posLabel}</span>
+        ${nextHtml}
+      </div>`;
+
+    const insertBefore = document.querySelector('.quiz-cta') ?? document.getElementById('site-footer');
+    insertBefore?.before(chapterNav);
+  }
 
   // Mobile menu toggle
   document.addEventListener('click', (e) => {

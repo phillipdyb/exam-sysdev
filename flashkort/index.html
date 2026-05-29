@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/style.css">
+  <title>Flashkort – Systemutvikling</title>
+  <script>!function(){var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);else if(window.matchMedia("(prefers-color-scheme: dark)").matches)document.documentElement.setAttribute("data-theme","dark")}();</script>
+</head>
+<body>
+
+<header id="site-header"></header>
+
+<main>
+  <div class="quiz-page">
+
+    <div class="quiz-header">
+      <h1>Flashkort</h1>
+      <p>75 begreper og definisjoner. Klikk på kortet for å snu det.</p>
+    </div>
+
+    <div class="quiz-topic-filters" id="topicFilters">
+      <button class="filter-btn active" data-topic="all">Alle (75)</button>
+      <button class="filter-btn" data-topic="mmi">MMI & IxD (15)</button>
+      <button class="filter-btn" data-topic="personvern">Personvern (15)</button>
+      <button class="filter-btn" data-topic="metodikk">Metodikk (15)</button>
+      <button class="filter-btn" data-topic="testing">Testing (15)</button>
+      <button class="filter-btn" data-topic="arkitektur">Arkitektur (15)</button>
+    </div>
+
+    <!-- FLASHCARD AREA -->
+    <div id="flashcardArea">
+      <div class="fc-progress">
+        <span class="fc-progress-label" id="fcProgressLabel">Kort 1 av 75</span>
+        <span class="fc-known-label" id="fcKnownLabel"></span>
+      </div>
+
+      <div class="progress-bar" style="margin-bottom: 1rem;">
+        <div class="progress-fill" id="fcProgressFill" style="width: 1.3%"></div>
+      </div>
+
+      <div class="fc-scene" id="fcScene" onclick="flipCard()">
+        <div class="fc-card" id="fcCard">
+          <div class="fc-front">
+            <div class="fc-label">Begrep</div>
+            <div class="fc-content" id="fcFront"></div>
+            <div class="fc-hint">Klikk for å se definisjon →</div>
+          </div>
+          <div class="fc-back">
+            <div class="fc-label">Definisjon</div>
+            <div class="fc-content" id="fcBack"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="fc-status-btns" id="fcStatusBtns" style="display:none">
+        <button class="btn btn-ghost fc-btn-review" onclick="event.stopPropagation(); markCard('review')">↩ Øv mer</button>
+        <button class="btn btn-primary fc-btn-known" onclick="event.stopPropagation(); markCard('known')">✓ Kan dette</button>
+      </div>
+
+      <div class="fc-nav">
+        <button class="btn btn-ghost btn-sm" id="fcPrevBtn" onclick="fcPrev()" disabled>← Forrige</button>
+        <button class="btn btn-ghost btn-sm" onclick="shuffleFlashcards()">⇄ Bland</button>
+        <button class="btn btn-ghost btn-sm" onclick="fcNext()">Neste →</button>
+      </div>
+    </div>
+
+    <!-- DONE SCREEN -->
+    <div id="fcDoneScreen" class="hidden">
+      <div class="results-card">
+        <span class="results-icon">🎓</span>
+        <div class="results-score" id="fcKnownCount">0/0</div>
+        <div class="results-pct">markert som "kan dette"</div>
+        <button class="btn btn-primary" onclick="resetFlashcards()">Ta igjen</button>
+        &nbsp;
+        <button class="btn btn-ghost" onclick="reviewOnlyUnknown()">Kun de vanskelige</button>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<div id="site-footer"></div>
+
+<script src="/flashkort/flashkort.js"></script>
+<script src="/nav.js"></script>
+</body>
+</html>

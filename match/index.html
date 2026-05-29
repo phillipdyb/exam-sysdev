@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/style.css">
+  <title>Match – Systemutvikling</title>
+  <script>!function(){var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);else if(window.matchMedia("(prefers-color-scheme: dark)").matches)document.documentElement.setAttribute("data-theme","dark")}();</script>
+</head>
+<body>
+
+<header id="site-header"></header>
+
+<main>
+  <div class="quiz-page">
+
+    <div class="quiz-header">
+      <h1>Match</h1>
+      <p>Koble hvert begrep med riktig definisjon. Klikk et begrep, klikk deretter riktig definisjon.</p>
+    </div>
+
+    <!-- START SCREEN -->
+    <div id="matchStartScreen">
+      <div class="quiz-topic-filters" id="matchTopicFilters">
+        <button class="filter-btn active" data-topic="all">Alle temaer</button>
+        <button class="filter-btn" data-topic="mmi">MMI & IxD</button>
+        <button class="filter-btn" data-topic="personvern">Personvern</button>
+        <button class="filter-btn" data-topic="metodikk">Metodikk</button>
+        <button class="filter-btn" data-topic="testing">Testing</button>
+        <button class="filter-btn" data-topic="arkitektur">Arkitektur</button>
+      </div>
+
+      <div class="match-start-card">
+        <h2>Klar til å matche?</h2>
+        <p>Du får 8 tilfeldige begreper og tilhørende definisjoner. Koble dem riktig.</p>
+        <button class="btn btn-primary" onclick="startMatch()">Start</button>
+      </div>
+    </div>
+
+    <!-- GAME AREA -->
+    <div id="matchGameArea" class="hidden">
+      <div class="match-status" id="matchStatus">0 av 8 koblet</div>
+
+      <div class="match-grid">
+        <div>
+          <div class="match-col-header">Begrep</div>
+          <div class="match-col" id="matchTerms"></div>
+        </div>
+        <div>
+          <div class="match-col-header">Definisjon</div>
+          <div class="match-col" id="matchDefs"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RESULTS SCREEN -->
+    <div id="matchResultsScreen" class="hidden">
+      <div class="results-card">
+        <span class="results-icon" id="matchResultIcon">🎉</span>
+        <div class="results-score" id="matchResultScore">8/8</div>
+        <div class="results-pct" id="matchResultErrors">0 feil</div>
+        <button class="btn btn-primary" onclick="startMatch()">Ny runde</button>
+        &nbsp;
+        <button class="btn btn-ghost" onclick="showMatchStart()">Bytt tema</button>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<div id="site-footer"></div>
+
+<script src="/match/match.js"></script>
+<script src="/nav.js"></script>
+</body>
+</html>
